@@ -1,0 +1,42 @@
+{
+  "buttons": [
+    {
+      "name": "menubtn",
+      "icon": "C:\\Users\\aleja\\OneDrive\\Documents\\Universidad\\Teoria1\\PROYECTO-BUENO\\Qss\\icons\\Icons\\feather\\align-justify.png"
+    },
+    {
+      "name": "Settings",
+      "icon": "C:\\Users\\aleja\\OneDrive\\Documents\\Universidad\\Teoria1\\PROYECTO-BUENO\\Qss\\icons\\Icons\\feather\\settings.png"
+    },
+    {
+      "name": "User",
+      "icon": "C:\\Users\\aleja\\OneDrive\\Documents\\Universidad\\Teoria1\\PROYECTO-BUENO\\Qss\\icons\\Icons\\feather\\user.png"
+    },
+    {
+      "name": "Prestamos",
+      "icon": "C:\\Users\\aleja\\OneDrive\\Documents\\Universidad\\Teoria1\\PROYECTO-BUENO\\Qss\\icons\\Icons\\font_awesome\\solid\\cart-flatbed.png"
+    },
+    {
+      "name": "Catalogo",
+      "icon": "C:\\Users\\aleja\\OneDrive\\Documents\\Universidad\\Teoria1\\PROYECTO-BUENO\\Qss\\icons\\Icons\\font_awesome\\solid\\book.png"
+    },
+    {
+      "name": "Reportes",
+      "icon": "C:\\Users\\aleja\\OneDrive\\Documents\\Universidad\\Teoria1\\PROYECTO-BUENO\\Qss\\icons\\Icons\\font_awesome\\solid\\file-signature.png"
+    },
+    {
+      "name": "Ayuda",
+      "icon": "C:\\Users\\aleja\\OneDrive\\Documents\\Universidad\\Teoria1\\PROYECTO-BUENO\\Qss\\icons\\Icons\\material_design\\help.png"
+    },
+    {
+      "name": "Informacion",
+      "icon": "C:\\Users\\aleja\\OneDrive\\Documents\\Universidad\\Teoria1\\PROYECTO-BUENO\\Qss\\icons\\Icons\\material_design\\info.png"
+    }
+  ],
+  "labels": [
+    {
+      "name": "label",
+      "pixmap": "default_pixmap_url"
+    }
+  ]
+}

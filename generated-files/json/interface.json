@@ -1,0 +1,14 @@
+{
+  "buttons": [
+    {
+      "name": "pushButton",
+      "icon": "Qss/icons/Icons/feather/airplay.png"
+    }
+  ],
+  "labels": [
+    {
+      "name": "label",
+      "pixmap": "default_pixmap_url"
+    }
+  ]
+}
