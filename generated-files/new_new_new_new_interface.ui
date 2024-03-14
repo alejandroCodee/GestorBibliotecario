@@ -636,12 +636,37 @@ background-color: rgb(2, 63, 82);</string>
                    </column>
                    <column>
                     <property name="text">
+                     <string>AUTOR</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
                      <string>AÑO DE PUBLICACIÓN</string>
                     </property>
                    </column>
                    <column>
                     <property name="text">
-                     <string>CANTIDAD DISPONIBLE</string>
+                     <string>DISPONIBLE</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>FORMATO</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>COPIAS</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>IDIOMA</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>RESUMEN</string>
                     </property>
                    </column>
                    <column>
@@ -993,6 +1018,20 @@ color: rgb(255, 255, 255);</string>
                      </widget>
                     </item>
                     <item>
+                     <widget class="QLineEdit" name="AUTOR_LE">
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(2, 63, 82);
+padding: 5px 10px;
+border-radius: 5px;
+
+color: rgb(255, 255, 255);</string>
+                      </property>
+                      <property name="placeholderText">
+                       <string>AUTOR</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
                      <widget class="QLineEdit" name="ANOP_LE">
                       <property name="styleSheet">
                        <string notr="true">background-color: rgb(2, 63, 82);
@@ -1007,6 +1046,34 @@ color: rgb(255, 255, 255);</string>
                      </widget>
                     </item>
                     <item>
+                     <widget class="QLineEdit" name="DISPONIBLE_LE">
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(2, 63, 82);
+padding: 5px 10px;
+border-radius: 5px;
+
+color: rgb(255, 255, 255);</string>
+                      </property>
+                      <property name="placeholderText">
+                       <string>DISPONIBLE</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLineEdit" name="FORMATO_LE">
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(2, 63, 82);
+padding: 5px 10px;
+border-radius: 5px;
+
+color: rgb(255, 255, 255);</string>
+                      </property>
+                      <property name="placeholderText">
+                       <string>FORMATO</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
                      <widget class="QLineEdit" name="CANTIDAD_LE">
                       <property name="styleSheet">
                        <string notr="true">background-color: rgb(2, 63, 82);
@@ -1017,6 +1084,34 @@ color: rgb(255, 255, 255);</string>
                       </property>
                       <property name="placeholderText">
                        <string>CANTIDAD</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLineEdit" name="IDIOMA_LE">
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(2, 63, 82);
+padding: 5px 10px;
+border-radius: 5px;
+
+color: rgb(255, 255, 255);</string>
+                      </property>
+                      <property name="placeholderText">
+                       <string>IDIOMA</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLineEdit" name="RESUMEN_LE">
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(2, 63, 82);
+padding: 5px 10px;
+border-radius: 5px;
+
+color: rgb(255, 255, 255);</string>
+                      </property>
+                      <property name="placeholderText">
+                       <string>RESUMEN</string>
                       </property>
                      </widget>
                     </item>

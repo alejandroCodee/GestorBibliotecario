@@ -347,8 +347,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_14.addWidget(self.frame_5)
 
         self.tableWidget_2 = QTableWidget(self.widget_4)
-        if (self.tableWidget_2.columnCount() < 7):
-            self.tableWidget_2.setColumnCount(7)
+        if (self.tableWidget_2.columnCount() < 12):
+            self.tableWidget_2.setColumnCount(12)
         __qtablewidgetitem5 = QTableWidgetItem()
         self.tableWidget_2.setHorizontalHeaderItem(0, __qtablewidgetitem5)
         __qtablewidgetitem6 = QTableWidgetItem()
@@ -363,6 +363,16 @@ class Ui_MainWindow(object):
         self.tableWidget_2.setHorizontalHeaderItem(5, __qtablewidgetitem10)
         __qtablewidgetitem11 = QTableWidgetItem()
         self.tableWidget_2.setHorizontalHeaderItem(6, __qtablewidgetitem11)
+        __qtablewidgetitem12 = QTableWidgetItem()
+        self.tableWidget_2.setHorizontalHeaderItem(7, __qtablewidgetitem12)
+        __qtablewidgetitem13 = QTableWidgetItem()
+        self.tableWidget_2.setHorizontalHeaderItem(8, __qtablewidgetitem13)
+        __qtablewidgetitem14 = QTableWidgetItem()
+        self.tableWidget_2.setHorizontalHeaderItem(9, __qtablewidgetitem14)
+        __qtablewidgetitem15 = QTableWidgetItem()
+        self.tableWidget_2.setHorizontalHeaderItem(10, __qtablewidgetitem15)
+        __qtablewidgetitem16 = QTableWidgetItem()
+        self.tableWidget_2.setHorizontalHeaderItem(11, __qtablewidgetitem16)
         self.tableWidget_2.setObjectName(u"tableWidget_2")
 
         self.verticalLayout_14.addWidget(self.tableWidget_2)
@@ -556,6 +566,16 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_16.addWidget(self.GENERO_LE)
 
+        self.AUTOR_LE = QLineEdit(self.frame_6)
+        self.AUTOR_LE.setObjectName(u"AUTOR_LE")
+        self.AUTOR_LE.setStyleSheet(u"background-color: rgb(2, 63, 82);\n"
+"padding: 5px 10px;\n"
+"border-radius: 5px;\n"
+"\n"
+"color: rgb(255, 255, 255);")
+
+        self.verticalLayout_16.addWidget(self.AUTOR_LE)
+
         self.ANOP_LE = QLineEdit(self.frame_6)
         self.ANOP_LE.setObjectName(u"ANOP_LE")
         self.ANOP_LE.setStyleSheet(u"background-color: rgb(2, 63, 82);\n"
@@ -566,6 +586,26 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_16.addWidget(self.ANOP_LE)
 
+        self.DISPONIBLE_LE = QLineEdit(self.frame_6)
+        self.DISPONIBLE_LE.setObjectName(u"DISPONIBLE_LE")
+        self.DISPONIBLE_LE.setStyleSheet(u"background-color: rgb(2, 63, 82);\n"
+"padding: 5px 10px;\n"
+"border-radius: 5px;\n"
+"\n"
+"color: rgb(255, 255, 255);")
+
+        self.verticalLayout_16.addWidget(self.DISPONIBLE_LE)
+
+        self.FORMATO_LE = QLineEdit(self.frame_6)
+        self.FORMATO_LE.setObjectName(u"FORMATO_LE")
+        self.FORMATO_LE.setStyleSheet(u"background-color: rgb(2, 63, 82);\n"
+"padding: 5px 10px;\n"
+"border-radius: 5px;\n"
+"\n"
+"color: rgb(255, 255, 255);")
+
+        self.verticalLayout_16.addWidget(self.FORMATO_LE)
+
         self.CANTIDAD_LE = QLineEdit(self.frame_6)
         self.CANTIDAD_LE.setObjectName(u"CANTIDAD_LE")
         self.CANTIDAD_LE.setStyleSheet(u"background-color: rgb(2, 63, 82);\n"
@@ -575,6 +615,26 @@ class Ui_MainWindow(object):
 "color: rgb(255, 255, 255);")
 
         self.verticalLayout_16.addWidget(self.CANTIDAD_LE)
+
+        self.IDIOMA_LE = QLineEdit(self.frame_6)
+        self.IDIOMA_LE.setObjectName(u"IDIOMA_LE")
+        self.IDIOMA_LE.setStyleSheet(u"background-color: rgb(2, 63, 82);\n"
+"padding: 5px 10px;\n"
+"border-radius: 5px;\n"
+"\n"
+"color: rgb(255, 255, 255);")
+
+        self.verticalLayout_16.addWidget(self.IDIOMA_LE)
+
+        self.RESUMEN_LE = QLineEdit(self.frame_6)
+        self.RESUMEN_LE.setObjectName(u"RESUMEN_LE")
+        self.RESUMEN_LE.setStyleSheet(u"background-color: rgb(2, 63, 82);\n"
+"padding: 5px 10px;\n"
+"border-radius: 5px;\n"
+"\n"
+"color: rgb(255, 255, 255);")
+
+        self.verticalLayout_16.addWidget(self.RESUMEN_LE)
 
         self.PASILLO_LE = QLineEdit(self.frame_6)
         self.PASILLO_LE.setObjectName(u"PASILLO_LE")
@@ -660,13 +720,23 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem7 = self.tableWidget_2.horizontalHeaderItem(2)
         ___qtablewidgetitem7.setText(QCoreApplication.translate("MainWindow", u"GENERO", None));
         ___qtablewidgetitem8 = self.tableWidget_2.horizontalHeaderItem(3)
-        ___qtablewidgetitem8.setText(QCoreApplication.translate("MainWindow", u"A\u00d1O DE PUBLICACI\u00d3N", None));
+        ___qtablewidgetitem8.setText(QCoreApplication.translate("MainWindow", u"AUTOR", None));
         ___qtablewidgetitem9 = self.tableWidget_2.horizontalHeaderItem(4)
-        ___qtablewidgetitem9.setText(QCoreApplication.translate("MainWindow", u"CANTIDAD DISPONIBLE", None));
+        ___qtablewidgetitem9.setText(QCoreApplication.translate("MainWindow", u"A\u00d1O DE PUBLICACI\u00d3N", None));
         ___qtablewidgetitem10 = self.tableWidget_2.horizontalHeaderItem(5)
-        ___qtablewidgetitem10.setText(QCoreApplication.translate("MainWindow", u"UBICACI\u00d3N/PASILLO", None));
+        ___qtablewidgetitem10.setText(QCoreApplication.translate("MainWindow", u"DISPONIBLE", None));
         ___qtablewidgetitem11 = self.tableWidget_2.horizontalHeaderItem(6)
-        ___qtablewidgetitem11.setText(QCoreApplication.translate("MainWindow", u"ESTADO", None));
+        ___qtablewidgetitem11.setText(QCoreApplication.translate("MainWindow", u"FORMATO", None));
+        ___qtablewidgetitem12 = self.tableWidget_2.horizontalHeaderItem(7)
+        ___qtablewidgetitem12.setText(QCoreApplication.translate("MainWindow", u"COPIAS", None));
+        ___qtablewidgetitem13 = self.tableWidget_2.horizontalHeaderItem(8)
+        ___qtablewidgetitem13.setText(QCoreApplication.translate("MainWindow", u"IDIOMA", None));
+        ___qtablewidgetitem14 = self.tableWidget_2.horizontalHeaderItem(9)
+        ___qtablewidgetitem14.setText(QCoreApplication.translate("MainWindow", u"RESUMEN", None));
+        ___qtablewidgetitem15 = self.tableWidget_2.horizontalHeaderItem(10)
+        ___qtablewidgetitem15.setText(QCoreApplication.translate("MainWindow", u"UBICACI\u00d3N/PASILLO", None));
+        ___qtablewidgetitem16 = self.tableWidget_2.horizontalHeaderItem(11)
+        ___qtablewidgetitem16.setText(QCoreApplication.translate("MainWindow", u"ESTADO", None));
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"REPORTES", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"AYUDA", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"INFORMACI\u00d3N", None))
@@ -682,8 +752,13 @@ class Ui_MainWindow(object):
         self.ISBN_LE.setPlaceholderText(QCoreApplication.translate("MainWindow", u"ISBN", None))
         self.TITULO_LE.setPlaceholderText(QCoreApplication.translate("MainWindow", u"TITULO", None))
         self.GENERO_LE.setPlaceholderText(QCoreApplication.translate("MainWindow", u"GENERO", None))
+        self.AUTOR_LE.setPlaceholderText(QCoreApplication.translate("MainWindow", u"AUTOR", None))
         self.ANOP_LE.setPlaceholderText(QCoreApplication.translate("MainWindow", u"A\u00d1O", None))
+        self.DISPONIBLE_LE.setPlaceholderText(QCoreApplication.translate("MainWindow", u"DISPONIBLE", None))
+        self.FORMATO_LE.setPlaceholderText(QCoreApplication.translate("MainWindow", u"FORMATO", None))
         self.CANTIDAD_LE.setPlaceholderText(QCoreApplication.translate("MainWindow", u"CANTIDAD", None))
+        self.IDIOMA_LE.setPlaceholderText(QCoreApplication.translate("MainWindow", u"IDIOMA", None))
+        self.RESUMEN_LE.setPlaceholderText(QCoreApplication.translate("MainWindow", u"RESUMEN", None))
         self.PASILLO_LE.setPlaceholderText(QCoreApplication.translate("MainWindow", u"PASILLO", None))
         self.ESTADO_LE.setPlaceholderText(QCoreApplication.translate("MainWindow", u"ESTADO", None))
         self.pushButton.setText(QCoreApplication.translate("MainWindow", u"ADD", None))
