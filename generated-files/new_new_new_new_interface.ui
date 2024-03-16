@@ -259,6 +259,42 @@
                  <number>0</number>
                 </property>
                 <item>
+                 <widget class="QPushButton" name="pushButton_2">
+                  <property name="minimumSize">
+                   <size>
+                    <width>40</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>Century Gothic</family>
+                    <pointsize>12</pointsize>
+                    <bold>true</bold>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">text-align: left;
+background-color: rgb(2, 63, 82);
+color: rgb(255, 255, 255);
+border-left-color: rgb(255, 255, 255);</string>
+                  </property>
+                  <property name="text">
+                   <string>Home</string>
+                  </property>
+                  <property name="icon">
+                   <iconset>
+                    <normaloff>../Qss/icons/Icons/feather/home.png</normaloff>../Qss/icons/Icons/feather/home.png</iconset>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>40</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+                <item>
                  <widget class="QPushButtonThemed" name="Prestamos">
                   <property name="font">
                    <font>
@@ -471,6 +507,158 @@ color: rgb(255, 255, 255);</string>
           </property>
           <item>
            <widget class="QCustomStackedWidget" name="mainPages">
+            <property name="currentIndex">
+             <number>5</number>
+            </property>
+            <widget class="QWidget" name="HomeP">
+             <layout class="QVBoxLayout" name="verticalLayout_20">
+              <item>
+               <widget class="QWidget" name="widget_6" native="true">
+                <layout class="QVBoxLayout" name="verticalLayout_19">
+                 <item>
+                  <widget class="QFrame" name="frame_7">
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QHBoxLayout" name="horizontalLayout_7">
+                    <item>
+                     <widget class="QLabel" name="label_8">
+                      <property name="font">
+                       <font>
+                        <family>Century Gothic</family>
+                        <pointsize>26</pointsize>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">color: rgb(255, 255, 255);</string>
+                      </property>
+                      <property name="text">
+                       <string>LIBROS</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLineEdit" name="Buscar_Libro">
+                      <property name="styleSheet">
+                       <string notr="true">color: rgb(255, 255, 255);
+font: 700 8pt &quot;Century Gothic&quot;;
+border-color: rgb(255, 255, 255);
+padding: 4px 10px;</string>
+                      </property>
+                      <property name="placeholderText">
+                       <string>¡Busca tu libro favorito!</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="buscar_libro">
+                      <property name="font">
+                       <font>
+                        <family>Century Gothic</family>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(0, 133, 175);
+color: rgb(255, 255, 255);</string>
+                      </property>
+                      <property name="text">
+                       <string>BUSCAR</string>
+                      </property>
+                      <property name="icon">
+                       <iconset>
+                        <normaloff>../Qss/icons/Icons/feather/search.png</normaloff>../Qss/icons/Icons/feather/search.png</iconset>
+                      </property>
+                      <property name="iconSize">
+                       <size>
+                        <width>20</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item alignment="Qt::AlignLeft">
+                  <widget class="QPushButton" name="refresh">
+                   <property name="text">
+                    <string>R</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QTableWidget" name="HomeTable">
+                   <column>
+                    <property name="text">
+                     <string>Titulo</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>Autor</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>Sinopsis</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>Año</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>Genero</string>
+                    </property>
+                   </column>
+                  </widget>
+                 </item>
+                 <item alignment="Qt::AlignRight">
+                  <widget class="QPushButton" name="alquilar_btn">
+                   <property name="font">
+                    <font>
+                     <family>Century Gothic</family>
+                     <pointsize>10</pointsize>
+                     <bold>true</bold>
+                    </font>
+                   </property>
+                   <property name="cursor">
+                    <cursorShape>OpenHandCursor</cursorShape>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">
+background-color: rgb(0, 133, 175);
+padding: 5px 10px;
+border-radius: 5px;
+
+color: rgb(255, 255, 255);</string>
+                   </property>
+                   <property name="text">
+                    <string>ALQUILAR</string>
+                   </property>
+                   <property name="icon">
+                    <iconset>
+                     <normaloff>../Qss/icons/Icons/feather/shopping-cart.png</normaloff>../Qss/icons/Icons/feather/shopping-cart.png</iconset>
+                   </property>
+                   <property name="iconSize">
+                    <size>
+                     <width>20</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
             <widget class="QWidget" name="prestamosP">
              <layout class="QVBoxLayout" name="verticalLayout_10">
               <item>
@@ -537,6 +725,13 @@ background-color: rgb(2, 63, 82);</string>
                      </widget>
                     </item>
                    </layout>
+                  </widget>
+                 </item>
+                 <item alignment="Qt::AlignLeft">
+                  <widget class="QPushButton" name="refresh_prestamos">
+                   <property name="text">
+                    <string>R</string>
+                   </property>
                   </widget>
                  </item>
                  <item>
@@ -618,6 +813,16 @@ background-color: rgb(2, 63, 82);</string>
                   </widget>
                  </item>
                  <item>
+                  <widget class="QLineEdit" name="Buscar_Catalogo"/>
+                 </item>
+                 <item alignment="Qt::AlignLeft">
+                  <widget class="QPushButton" name="refresh_catalogo">
+                   <property name="text">
+                    <string>R</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
                   <widget class="QTableWidget" name="tableWidget_2">
                    <column>
                     <property name="text">
@@ -690,8 +895,8 @@ background-color: rgb(2, 63, 82);</string>
              <widget class="QLabelThemed" name="label_2">
               <property name="geometry">
                <rect>
-                <x>300</x>
-                <y>40</y>
+                <x>50</x>
+                <y>30</y>
                 <width>231</width>
                 <height>71</height>
                </rect>
@@ -739,32 +944,38 @@ background-color: rgb(2, 63, 82);</string>
              </layout>
             </widget>
             <widget class="QWidget" name="infoP">
-             <widget class="QLabelThemed" name="label_4">
-              <property name="geometry">
-               <rect>
-                <x>220</x>
-                <y>40</y>
-                <width>391</width>
-                <height>71</height>
-               </rect>
-              </property>
-              <property name="font">
-               <font>
-                <family>Century Gothic</family>
-                <pointsize>28</pointsize>
-                <bold>true</bold>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">color: rgb(255, 255, 255);</string>
-              </property>
-              <property name="text">
-               <string>INFORMACIÓN</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
-              </property>
-             </widget>
+             <layout class="QGridLayout" name="gridLayout">
+              <item row="0" column="0">
+               <widget class="QWidget" name="widget_7" native="true">
+                <widget class="QLabelThemed" name="label_4">
+                 <property name="geometry">
+                  <rect>
+                   <x>70</x>
+                   <y>30</y>
+                   <width>264</width>
+                   <height>45</height>
+                  </rect>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Century Gothic</family>
+                   <pointsize>28</pointsize>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: rgb(255, 255, 255);</string>
+                 </property>
+                 <property name="text">
+                  <string>INFORMACIÓN</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </widget>
+              </item>
+             </layout>
             </widget>
            </widget>
           </item>
@@ -798,7 +1009,7 @@ background-color: rgb(2, 63, 82);</string>
           <item>
            <widget class="QTabWidget" name="Menu_Der">
             <property name="currentIndex">
-             <number>1</number>
+             <number>0</number>
             </property>
             <widget class="QWidget" name="tab">
              <attribute name="title">
@@ -840,7 +1051,7 @@ background-color: rgb(2, 63, 82);</string>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_9">
                     <item>
-                     <widget class="QLineEdit" name="codigo_LE">
+                     <widget class="QDateEdit" name="fecha_devolucion">
                       <property name="styleSheet">
                        <string notr="true">background-color: rgb(2, 63, 82);
 padding: 5px 10px;
@@ -848,47 +1059,8 @@ border-radius: 5px;
 
 color: rgb(255, 255, 255);</string>
                       </property>
-                      <property name="placeholderText">
-                       <string>Codigo</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QLineEdit" name="fechaprestamo_LE">
-                      <property name="styleSheet">
-                       <string notr="true">background-color: rgb(2, 63, 82);
-padding: 5px 10px;
-border-radius: 5px;
-color: rgb(255, 255, 255);</string>
-                      </property>
-                      <property name="placeholderText">
-                       <string>Fecha Prestamo</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QLineEdit" name="fechadevolucion_LE">
-                      <property name="styleSheet">
-                       <string notr="true">background-color: rgb(2, 63, 82);
-padding: 5px 10px;
-border-radius: 5px;
-color: rgb(255, 255, 255);</string>
-                      </property>
-                      <property name="placeholderText">
-                       <string>Fecha Devolución</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QLineEdit" name="libro_LE">
-                      <property name="styleSheet">
-                       <string notr="true">background-color: rgb(2, 63, 82);
-padding: 5px 10px;
-border-radius: 5px;
-color: rgb(255, 255, 255);</string>
-                      </property>
-                      <property name="placeholderText">
-                       <string>Libro</string>
+                      <property name="calendarPopup">
+                       <bool>true</bool>
                       </property>
                      </widget>
                     </item>
