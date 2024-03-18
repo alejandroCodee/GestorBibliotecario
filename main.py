@@ -11,8 +11,8 @@ import sys
 # IMPORT GUI FILE
 from src.ui_interface import *
 from src.functions import Functions
+from src.functions import run_login_form
 ########################################################################
-
 ########################################################################
 # IMPORT Custom widgets
 from Custom_Widgets import *
@@ -67,6 +67,9 @@ if __name__ == "__main__":
     ########################################################################
     ## 
     ########################################################################
+
+    run_login_form(app)
+
     window = MainWindow()
     window.show()
     sys.exit(app.exec_())
