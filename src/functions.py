@@ -35,41 +35,30 @@ def connect_to_database():
 
 def run_login_form(app):
     # Define la función de login
-    def login():
+    usuario_data = []  
+    
+
+    def get_usuario_data(self):
         msg_box = QMessageBox()
-        username = form.lineEdit.text()
-        password = form.lineEdit_2.text()
         try:
-            for data in form.usuario_data:
-                if username == data[2] and password == data[5]:
-                    user_role = data[3]
-                    if user_role == "admin":
-                        print("ES ADMIN")
-                    else:
-                        print("ES NORMAL")
-                    return
-            msg_box.setText(" Usuario o contraseña invalidos ")
-            msg_box.exec_()
+            # Usar la configuración de conexión desde el diccionario config
+            connection = mysql.connector.connect(**config)
+
+            cursor = connection.cursor()
+            cursor.execute("SELECT * FROM usuarios")
+
+            self.usuario_data = cursor.fetchall()
+            self.list_size = len(self.usuario_data)  
+
+            cursor.close()
+            connection.close()
+
         except mysql.connector.Error as err:
-            msg_box.setText(" ERROR ", err)
+            msg_box.setText(" ERROR ", err)  
             msg_box.exec_()
 
-    # Define la función de registro
-    def register():
-        username = form.lineEdit.text()
-        password = form.lineEdit_2.text()
-        mycursor = mydb.cursor()
-        sql = "INSERT INTO usuarios (id_usuario,identidad, nombre, rol, telefono, password) VALUES (%s, %s, %s, %s, %s, %s)"
-        val = (form.list_size + 1, 12345678, username, "normal", 1234567890, password)
-        mycursor.execute(sql, val)
-        mydb.commit()
-        msg_box = QMessageBox()
-        msg_box.setText(" SE HA REGISTRADO")
-        msg_box.exec_()
-        mycursor.close()
-        mydb.close()
-        form.get_usuario_data()
-
+    
+    get_usuario_data(usuario_data)
     def on_toggle_password_Action():
         if not form.password_shown:
             form.setEchoMode(QLineEdit.Normal)
@@ -168,7 +157,7 @@ def run_login_form(app):
     label_3 = QtWidgets.QLabel(widget)
     formLayout_2.setWidget(4, QtWidgets.QFormLayout.LabelRole, label_3)
 
-    """lineEdit_2 = PasswordEdit(widget)
+    lineEdit_2 = QtWidgets.QLineEdit(widget)
     lineEdit_2.setMinimumSize(QtCore.QSize(0, 40))
     lineEdit_2.setStyleSheet("QLineEdit {\n"
                               "color: white;\n"
@@ -182,7 +171,7 @@ def run_login_form(app):
                               "}")
     formLayout_2.setWidget(4, QtWidgets.QFormLayout.FieldRole, lineEdit_2)
     lineEdit_2.setEchoMode(QtWidgets.QLineEdit.Password)
-    """
+        
     line = QtWidgets.QFrame(widget)
     line.setStyleSheet("border: 2px solid white;")
     line.setFrameShape(QtWidgets.QFrame.HLine)
@@ -236,10 +225,53 @@ def run_login_form(app):
     horizontalLayout_3.setStretch(0, 1)
     verticalLayout.addLayout(horizontalLayout_3)
 
-    # Conecta las señales de los botones a las funciones correspondientes
+   
+
+    def login():
+        msg_box = QMessageBox()
+
+        username = lineEdit.text()
+        password = lineEdit_2.text()
+        try:
+            for data in form.usuario_data:
+                if username == data[2] and password == data[5]:
+                    user_role = data[3]
+                    if user_role == "admin":
+                        print("ES ADMIN")
+                    else:
+                        print("ES NORMAL")
+                    return
+            msg_box.setText(" Usuario o contraseña invalidos ")
+            msg_box.exec_()
+        except mysql.connector.Error as err:
+            msg_box.setText(" ERROR ", err)
+            msg_box.exec_()
+
+    # Define la función de registro
+    def register():
+        username = lineEdit.text()
+        password = lineEdit_2.text()
+        mydb = mysql.connector.connect(
+        host = "db4free.net",
+        user = "thehaternoob",
+        password = "palarga123",
+        database = "thehaternoob"
+        )
+        mycursor = mydb.cursor()
+        sql = "INSERT INTO usuarios (id_usuario,identidad, nombre, rol, telefono, password) VALUES (%s, %s, %s, %s, %s, %s)"
+        val = (form.list_size + 1, 12345678, username, "normal", 1234567890, password)
+        mycursor.execute(sql, val)
+        mydb.commit()
+        msg_box = QMessageBox()
+        msg_box.setText(" SE HA REGISTRADO")
+        msg_box.exec_()
+        mycursor.close()
+        mydb.close()
+        form.get_usuario_data()
+
+     # Conecta las señales de los botones a las funciones correspondientes
     pushButton.clicked.connect(login)
     pushButton_2.clicked.connect(register)
-
     form.show()
     app.exec_()
 
@@ -261,8 +293,7 @@ class Functions:
         self.ui.refresh.clicked.connect(self.refresh_table)
         self.ui.refresh_catalogo.clicked.connect(self.refresh_catalogo_table)  
 
-
-
+       
 
         self.title = None 
 
