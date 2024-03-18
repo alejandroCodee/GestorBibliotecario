@@ -70,6 +70,15 @@ def run_login_form(app):
         mydb.close()
         form.get_usuario_data()
 
+    def on_toggle_password_Action():
+        if not form.password_shown:
+            form.setEchoMode(QLineEdit.Normal)
+            form.password_shown = True
+            form.togglepasswordAction.setIcon(self.hiddenIcon)
+        else:
+            form.setEchoMode(QLineEdit.Password)
+            form.password_shown = False
+            form.togglepasswordAction.setIcon(self.visibleIcon)
     # Crea la instancia del formulario
 
     form = QtWidgets.QWidget()
@@ -90,6 +99,11 @@ def run_login_form(app):
         QPushButton:pressed {
             background-color: #146cfa;
             border-style: inset;
+        }
+        QLineEdit {
+        border-radius: 0px;
+        height: 30px;
+        margin: 0px 0px 0px 0px;
         }
         """
     )
@@ -228,10 +242,6 @@ def run_login_form(app):
 
     form.show()
     app.exec_()
-
-
-
-
 
 
 
