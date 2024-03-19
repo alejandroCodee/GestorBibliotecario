@@ -23,7 +23,7 @@ from PySide6.QtWidgets import (QApplication, QDateEdit, QFrame, QGridLayout,
 from Custom_Widgets.Theme import (QLabelThemed, QPushButtonThemed)
 from Custom_Widgets.Widgets import (QCustomSlideMenu, QCustomStackedWidget)
 
-class Ui_MainWindow(object):
+class Ui_UserMain(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")

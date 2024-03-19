@@ -11,6 +11,7 @@ from PySide6.QtCore import QDate
 from PySide6 import QtCore 
 from PySide6.QtGui import QIcon
 from PySide6 import QtWidgets  
+from ui_interface_user import Ui_UserMain
 import random
 import mysql.connector
 
@@ -31,9 +32,9 @@ def connect_to_database():
         return None
 
 
-class Functions:
+class FunctionsUser:
     def __init__(self, ui):
-        self.ui = ui
+        self.ui = Ui_UserMain()
         self.ui.Add.clicked.connect(self.add_data_to_table)
         self.ui.pushButton.clicked.connect(self.add_data_to_table_catalogo)
         self.ui.buscar_libro.clicked.connect(self.buscar_libro)

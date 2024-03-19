@@ -74,6 +74,9 @@ class login(QWidget):
         except mysql.connector.Error as err:
             msg_box.setText(" ERROR ", err)  
             msg_box.exec() 
+            
+    def obtener_rol(self):
+        return self.user_role
 
     def login(self):
         msg_box = QMessageBox()
