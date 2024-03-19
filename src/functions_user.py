@@ -1,5 +1,4 @@
 from PySide6.QtWidgets import QTableWidgetItem
-
 from PySide6 import QtWidgets
 from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QMessageBox
@@ -30,6 +29,7 @@ def connect_to_database():
     except mysql.connector.Error as err:
         print(f"Error connecting to database: {err}")
         return None
+
 
 class Functions:
     def __init__(self, ui):
