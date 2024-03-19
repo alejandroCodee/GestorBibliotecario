@@ -4,9 +4,10 @@ import mysql.connector
 from PySide6.QtWidgets import QApplication, QWidget, QMessageBox
 from PySide6.QtCore import Signal  # Importa Signal
 from cryptography.fernet import Fernet
+from PySide6.QtWidgets import QStackedWidget
 from ui_form import Ui_login
 
-key = Fernet.generate_key()
+key = b'L4TVU4VWcSQcrUmYkDqEYP2X8rapXYcLsL0XQ9ZaVVM='
 cipher_suite = Fernet(key)
 
 class login(QWidget):
@@ -29,6 +30,19 @@ class login(QWidget):
 
         self.ui.pushButton.clicked.connect(self.login)
         self.ui.pushButton_2.clicked.connect(self.register)
+        self.ui.crear.clicked.connect(self.switch_to_page_4)  # Assuming the button's object name is "pushButton_crear"
+        self.ui.pushButton_3.clicked.connect(self.switch_to_login)
+
+    def switch_to_page_4(self):
+        # Access the stacked widget and set the current page to page_4
+        stacked_widget = self.findChild(QStackedWidget, "stackedWidget")  # Replace "stackedWidget" with the actual object name
+        stacked_widget.setCurrentIndex(stacked_widget.indexOf(self.ui.page_4))  # Assuming the page's object name is "page_4"
+
+    def switch_to_login(self):
+        # Access the stacked widget and set the current page to page_4
+        stacked_widget = self.findChild(QStackedWidget, "stackedWidget")  # Replace "stackedWidget" with the actual object name
+        stacked_widget.setCurrentIndex(stacked_widget.indexOf(self.ui.login_2))  # Assuming the page's object name is "page_4"
+
 
     def encrypt_password(self, password):
         encrypted_password = cipher_suite.encrypt(password.encode())
@@ -69,7 +83,7 @@ class login(QWidget):
             for data in self.usuario_data:
                 if username == data[2] and password == self.decrypt_password(data[5]):
                     self.user_role = data[3]  
-                    if self.user_role == "admin":
+                    if self.user_role == "ADMIN":
                         print("ES ADMIN") #borrable
                     else:
                         print("ES NORMAL") #borrable
@@ -84,8 +98,11 @@ class login(QWidget):
             msg_box.exec()  
 
     def register(self):
-        username = self.ui.lineEdit.text()
-        password = self.ui.lineEdit_2.text()
+        username = self.ui.user_LE.text()
+        telefono = self.ui.telefono_LE.text()
+        identidad = self.ui.identidad_LE.text()
+        tipo = self.ui.tipo_LE.currentText()
+        password = self.ui.password_LE.text()
         encrypted_password = self.encrypt_password(password)
         mydb = mysql.connector.connect(
             host = "db4free.net",
@@ -95,7 +112,7 @@ class login(QWidget):
         )
         mycursor = mydb.cursor()
         sql = "INSERT INTO usuarios (id_usuario,identidad, nombre, rol, telefono, password) VALUES (%s, %s, %s, %s, %s, %s)"
-        val = (self.list_size+1,12345678, username, "normal", 1234567890, encrypted_password)
+        val = (self.list_size+1,identidad, username, tipo, telefono, encrypted_password)
         mycursor.execute(sql, val)  
         mydb.commit()
         msg_box = QMessageBox()
@@ -105,8 +122,8 @@ class login(QWidget):
         mydb.close()
         self.get_usuario_data()
 
-if __name__ == "__main__":
+"""if __name__ == "__main__":
     app = QApplication(sys.argv)
     widget = login()
     widget.show()
-    sys.exit(app.exec())
+    sys.exit(app.exec())"""

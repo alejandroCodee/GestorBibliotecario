@@ -508,7 +508,7 @@ color: rgb(255, 255, 255);</string>
           <item>
            <widget class="QCustomStackedWidget" name="mainPages">
             <property name="currentIndex">
-             <number>5</number>
+             <number>2</number>
             </property>
             <widget class="QWidget" name="HomeP">
              <layout class="QVBoxLayout" name="verticalLayout_20">
