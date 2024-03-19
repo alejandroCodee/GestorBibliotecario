@@ -11,13 +11,13 @@ import sys
 # IMPORT GUI FILE
 from src.ui_interface import *
 from src.functions import Functions
-from src.functions import run_login_form
 
 ########################################################################
 ########################################################################
 # IMPORT Custom widgets
 from Custom_Widgets import *
 from Custom_Widgets.QAppSettings import QAppSettings
+from login import login 
 ########################################################################
 
 ########################################################################
@@ -32,32 +32,32 @@ class MainWindow(QMainWindow):
         ########################################################################
         # APPLY JSON STYLESHEET
         ########################################################################
-        # self = QMainWindow class
-        # self.ui = Ui_MainWindow / user interface class
-        #Use this if you only have one json file named "style.json" inside the root directory, "json" directory or "jsonstyles" folder.
-        # loadJsonStyle(self, self.ui) 
-
-        # Use this to specify your json file(s) path/name
-        loadJsonStyle(self, self.ui, jsonFiles = {
-            "json-styles/style.json"
-            }) 
+        loadJsonStyle(self, self.ui, jsonFiles={"json-styles/style.json"}) 
 
         self.functions = Functions(self.ui)
 
-        ########################################################################
+        self.login_window = login()
+        self.login_window.show()
+
+        self.login_window.session_closed.connect(self.show_main_window)
 
         #######################################################################
-        # SHOW WINDOW
-        #######################################################################
-        self.show() 
 
-        ########################################################################
-        # UPDATE APP SETTINGS LOADED FROM JSON STYLESHEET 
-        # ITS IMPORTANT TO RUN THIS AFTER SHOWING THE WINDOW
-        # THIS PROCESS WILL RUN ON A SEPARATE THREAD WHEN GENERATING NEW ICONS
-        # TO PREVENT THE WINDOW FROM BEING UNRESPONSIVE
-        ########################################################################
-        # self = QMainWindow class
+    #######################################################################
+    # SHOW WINDOW
+    #######################################################################
+    def show_main_window(self):
+        # Cierra la ventana de login y muestra la ventana principal
+        self.login_window.close()
+        self.show()
+
+    ########################################################################
+    # UPDATE APP SETTINGS LOADED FROM JSON STYLESHEET 
+    # IT'S IMPORTANT TO RUN THIS AFTER SHOWING THE WINDOW
+    # THIS PROCESS WILL RUN ON A SEPARATE THREAD WHEN GENERATING NEW ICONS
+    # TO PREVENT THE WINDOW FROM BEING UNRESPONSIVE
+    ########################################################################
+    def update_app_settings(self):
         QAppSettings.updateAppSettings(self)
 
 ########################################################################
@@ -65,15 +65,8 @@ class MainWindow(QMainWindow):
 ########################################################################
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    ########################################################################
-    ## 
-    ########################################################################
-
-
-    run_login_form(app)
-
     window = MainWindow()
-    window.show()
+    window.update_app_settings()  # Llama a la función para actualizar la configuración de la aplicación
     sys.exit(app.exec_())
 ########################################################################
 ## END===>
