@@ -120,44 +120,6 @@ class FunctionsUser:
             print(f"Error executing search query: {err}")
 
 
-#para que se carguen los datos de catalogo
-    """def load_data_to_table_catalogo(self):
-        select_query = "SELECT * FROM Libros"
-        try:
-            with self.connection.cursor() as cursor:
-                cursor.execute(select_query)
-                data = cursor.fetchall()
-                for row in data:
-                    self.add_row_to_catalogo_table(row)
-        except mysql.connector.Error as err:
-            print(f"Error loading data to catalogo table: {err}")
-
-    def add_row_to_catalogo_table(self, row_data):
-        row_position = self.ui.tableWidget_2.rowCount()
-        self.ui.tableWidget_2.insertRow(row_position)
-        for column, value in enumerate(row_data):
-            self.ui.tableWidget_2.setItem(row_position, column, QTableWidgetItem(str(value)))
-
-
-#para que se carguen los datos de prestamos
-    def load_data_to_table(self):
-        select_query = "SELECT * FROM presto"
-        try:
-            with self.connection.cursor() as cursor:
-                cursor.execute(select_query)
-                data = cursor.fetchall()
-                for row in data:
-                    self.add_row_to_prestamos_table(row)
-        except mysql.connector.Error as err:
-            print(f"Error loading data to prestamos table: {err}")
-
-    def add_row_to_prestamos_table(self, row_data):
-        row_position = self.ui.prestamos_tabla.rowCount()
-        self.ui.prestamos_tabla.insertRow(row_position)
-        for column, value in enumerate(row_data):
-            self.ui.prestamos_tabla.setItem(row_position, column, QTableWidgetItem(str(value)))
-
-"""
 
 #FUNCIONES DE PRUEBA
     def load_data_to_home_table(self):

@@ -13,6 +13,8 @@ from PySide6.QtGui import QIcon
 from PySide6 import QtWidgets  
 import random
 from src.ui_interface import Ui_MainWindow
+from login import login
+
 
 import mysql.connector
 
@@ -93,8 +95,6 @@ class Functions:
             QMessageBox.warning(self.ui, "Advertencia", "Por favor, seleccione una fila antes de hacer clic en el botón 'Alquilar'")
 
 
-    
-
     def buscar_libro(self):
         titulo = self.ui.Buscar_Libro.text()
 
@@ -146,6 +146,9 @@ class Functions:
                     self.add_row_to_prestamos_table(row)
         except mysql.connector.Error as err:
             print(f"Error loading data to prestamos table: {err}")
+
+
+
 
     def add_row_to_prestamos_table(self, row_data):
         row_position = self.ui.prestamos_tabla.rowCount()
@@ -283,14 +286,18 @@ class Functions:
 
         codigo = random.randint(1000, 9999)
         #codigo = self.ui.codigo_LE.text()
+        #usuario = self.ui.usuario_LE.text()
         fechaprestamo = fecha_actual.toString("yyyy-MM-dd")
         fechadevolucion = self.ui.fecha_devolucion.date().toString("yyyy-MM-dd")
 
         #EN VEZ DE AGARRAR ESTE .TEXT, QUE AGARRE, LO DE LA FILA.
         #libro = self.ui.libro_LE.text()
         libro = self.title 
-        usuario = self.ui.usuario_LE.text()
+        login_i = login()
 
+        usuario = self.ui.usuario_LE.text()
+        
+        print("hola" + usuario)
         # Prepare SQL query to insert data
         insert_query = """
             INSERT INTO presto (id_prestamo, fecha_prestamo, fecha_devolucion, Libro, usuario)
@@ -299,7 +306,12 @@ class Functions:
         try:
             with self.connection.cursor() as cursor:
                 cursor.execute(insert_query, (codigo, fechaprestamo, fechadevolucion, libro, usuario))
-                self.connection.commit()  # Commit changes to the database
+                self.connection.commit() 
+
+                print("Data inserted successfully into presto table")
+
+
+                 # Commit changes to the database
                 # Get the newly inserted row ID (optional)
                 cursor.execute("SELECT LAST_INSERT_ID()")
                 inserted_row_id = cursor.fetchone()[0]
@@ -318,9 +330,6 @@ class Functions:
 
         except mysql.connector.Error as err:
             print(f"Error inserting data: {err}")
-
-
-
 
 
 

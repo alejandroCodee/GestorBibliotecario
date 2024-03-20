@@ -25,6 +25,7 @@ class login(QWidget):
         self.db_password = "palarga123"
         self.db_name = "thehaternoob"
 
+        self.user_role = ""
         self.usuario_data = []  
         self.get_usuario_data()
 
@@ -51,7 +52,8 @@ class login(QWidget):
     def decrypt_password(self, encrypted_password):
         decrypted_password = cipher_suite.decrypt(encrypted_password).decode()
         return decrypted_password
-    
+
+
     def get_usuario_data(self):
         msg_box = QMessageBox()
         try:
@@ -87,13 +89,16 @@ class login(QWidget):
                 if username == data[2] and password == self.decrypt_password(data[5]):
                     self.user_role = data[3]  
                     rol = self.obtener_rol()
+                    print(self.logged_in_user)
 
                     if self.user_role == "ADMIN":
                         print("ES ADMIN") #borrable
                     else:
                         print("ES NORMAL") #borrable
                     # Emite la señal cuando el usuario inicia sesión exitosamente
+                    
                     self.session_closed.emit(rol)
+
                     return  
             msg_box.setText(" Usuario o contraseña invalidos ")  
             msg_box.exec()  
@@ -101,6 +106,8 @@ class login(QWidget):
         except mysql.connector.Error as err:
             msg_box.setText(" ERROR ", err)  
             msg_box.exec()  
+
+    
 
     def register(self):
         username = self.ui.user_LE.text()

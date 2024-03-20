@@ -1,4 +1,3 @@
-
 ########################################################################
 ## IMPORTS
 ########################################################################
@@ -32,37 +31,45 @@ class MainWindow(QMainWindow):
         self.ui_admin = Ui_MainWindow()
         self.ui_user = Ui_UserMain()
 
-        
-        self.ui_user.setupUi(self)
-        self.ui_admin.setupUi(self)
 
-        ########################################################################
-        # APPLY JSON STYLESHEET
-        ########################################################################
-        loadJsonStyle(self, self.ui_admin, jsonFiles={"json-styles/style.json"}) 
-        loadJsonStyle(self, self.ui_user, jsonFiles={"json-styles/style_user.json"}) 
 
         # Para trabajar con la interfaz de administrador
-        self.functions_admin = Functions(self.ui_admin)
         # Para trabajar con la interfaz de usuario
-        self.functions_user = FunctionsUser(self.ui_user)   
         self.login_window = login()
         self.login_window.show()
         self.login_window.session_closed.connect(self.show_main_window)
+
+        
+        ########################################################################
+        # APPLY JSON STYLESHEET
+        ########################################################################
+
 
     def show_main_window(self):
         # Cierra la ventana de login y muestra la ventana principal
         self.login_window.close()
         rol = self.login_window.obtener_rol()
         if rol == "ADMIN":
+            self.ui_admin.setupUi(self)
+            loadJsonStyle(self, self.ui_admin, jsonFiles={"json-styles/style.json"}) 
+            self.functions_admin = Functions(self.ui_admin)
+
+
+
             self.show()
         else:
+            self.ui_user.setupUi(self)
+            loadJsonStyle(self, self.ui_user, jsonFiles={"json-styles/style_user.json"}) 
+            self.functions_user = FunctionsUser(self.ui_user)   
+
+
+
             self.show()
         
 
     
-    def update_app_settings(self):
-        QAppSettings.updateAppSettings(self)
+    #def update_app_settings(self):
+     #   QAppSettings.updateAppSettings(self)
 
 ########################################################################
 ## EXECUTE APP
@@ -70,7 +77,7 @@ class MainWindow(QMainWindow):
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     window = MainWindow()
-    window.update_app_settings()  # Llama a la función para actualizar la configuración de la aplicación
+    #window.update_app_settings()  # Llama a la función para actualizar la configuración de la aplicación
     sys.exit(app.exec_())
 ########################################################################
 ## END===>

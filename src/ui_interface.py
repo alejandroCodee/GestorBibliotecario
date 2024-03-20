@@ -15,10 +15,11 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QDateEdit, QFrame, QHBoxLayout,
-    QHeaderView, QLabel, QLineEdit, QMainWindow,
-    QPushButton, QSizePolicy, QSpacerItem, QTabWidget,
-    QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QDateEdit, QFrame, QGridLayout,
+    QHBoxLayout, QHeaderView, QLabel, QLineEdit,
+    QMainWindow, QPushButton, QSizePolicy, QSpacerItem,
+    QTabWidget, QTableWidget, QTableWidgetItem, QVBoxLayout,
+    QWidget)
 
 from Custom_Widgets.Theme import (QLabelThemed, QPushButtonThemed)
 from Custom_Widgets.Widgets import (QCustomSlideMenu, QCustomStackedWidget)
@@ -73,6 +74,13 @@ class Ui_MainWindow(object):
 
 
         self.horizontalLayout.addWidget(self.frameIzq, 0, Qt.AlignLeft)
+
+        self.logged = QLabel(self.header)
+        self.logged.setObjectName(u"logged")
+        self.logged.setStyleSheet(u"font: 700 12pt \"Century Gothic\";\n"
+"color: rgb(255, 255, 255);")
+
+        self.horizontalLayout.addWidget(self.logged)
 
         self.frameDer = QFrame(self.header)
         self.frameDer.setObjectName(u"frameDer")
@@ -513,7 +521,7 @@ class Ui_MainWindow(object):
         self.reportesP.setObjectName(u"reportesP")
         self.label_2 = QLabelThemed(self.reportesP)
         self.label_2.setObjectName(u"label_2")
-        self.label_2.setGeometry(QRect(300, 40, 231, 71))
+        self.label_2.setGeometry(QRect(50, 30, 231, 71))
         self.label_2.setFont(font7)
         self.label_2.setStyleSheet(u"color: rgb(255, 255, 255);")
         self.label_2.setAlignment(Qt.AlignCenter)
@@ -533,12 +541,19 @@ class Ui_MainWindow(object):
         self.mainPages.addWidget(self.ayudaP)
         self.infoP = QWidget()
         self.infoP.setObjectName(u"infoP")
-        self.label_4 = QLabelThemed(self.infoP)
+        self.gridLayout = QGridLayout(self.infoP)
+        self.gridLayout.setObjectName(u"gridLayout")
+        self.widget_7 = QWidget(self.infoP)
+        self.widget_7.setObjectName(u"widget_7")
+        self.label_4 = QLabelThemed(self.widget_7)
         self.label_4.setObjectName(u"label_4")
-        self.label_4.setGeometry(QRect(220, 40, 391, 71))
+        self.label_4.setGeometry(QRect(70, 30, 264, 45))
         self.label_4.setFont(font7)
         self.label_4.setStyleSheet(u"color: rgb(255, 255, 255);")
         self.label_4.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout.addWidget(self.widget_7, 0, 0, 1, 1)
+
         self.mainPages.addWidget(self.infoP)
 
         self.verticalLayout_2.addWidget(self.mainPages)
@@ -785,7 +800,7 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
 
         self.mainPages.setCurrentIndex(2)
-        self.Menu_Der.setCurrentIndex(0)
+        self.Menu_Der.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -795,6 +810,7 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.menubtn.setText("")
         self.label.setText(QCoreApplication.translate("MainWindow", u"SISTEBIB", None))
+        self.logged.setText("")
         self.Settings.setText("")
         self.User.setText("")
         self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"Home", None))

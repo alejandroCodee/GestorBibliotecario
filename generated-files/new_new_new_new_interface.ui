@@ -107,6 +107,17 @@
          </layout>
         </widget>
        </item>
+       <item>
+        <widget class="QLabel" name="logged">
+         <property name="styleSheet">
+          <string notr="true">font: 700 12pt &quot;Century Gothic&quot;;
+color: rgb(255, 255, 255);</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
        <item alignment="Qt::AlignRight">
         <widget class="QFrame" name="frameDer">
          <property name="frameShape">
