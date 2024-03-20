@@ -39,36 +39,25 @@ def connect_to_database():
 class FunctionsUser:
     def __init__(self, ui):
         self.ui = ui
-        #self.ui.Add.clicked.connect(self.add_data_to_table)
-        #self.ui.pushButton.clicked.connect(self.add_data_to_table_catalogo)
         self.ui.alquilar_btn.clicked.connect(self.handle_rent_button_click)
+        self.ui.Add.clicked.connect(self.add_data_to_table)
         self.ui.buscar_libro.clicked.connect(self.buscar_libro)
         self.connection = connect_to_database()  # Establish database connection
-
-        
         self.ui.refresh.clicked.connect(self.refresh_table)
-        #self.ui.refresh_catalogo.clicked.connect(self.refresh_catalogo_table)  
-
-       
 
         self.title = None 
 
         if self.connection:  # Check if connection is established
             self.load_data_to_home_table()
-            #self.load_data_to_table_catalogo()
-            #self.load_data_to_table()
 
     def handle_rent_button_click(self):
-        # Get the selected row
         selected_row = self.ui.HomeTable.currentRow()
 
         if selected_row >= 0:
-            # Get the title from the selected row
             title_item = self.ui.HomeTable.item(selected_row, 0)
             if title_item:
                 self.title = title_item.text()
 
-                # Update the "Copias" column for the selected book
                 update_query = """
                     UPDATE Libros
                     SET Copias = Copias - 1
@@ -80,12 +69,8 @@ class FunctionsUser:
                         cursor.execute(update_query, (self.title,))
                         self.connection.commit()
 
-                        # Inform the user about the update (optional)
                         QMessageBox.information(self.ui.centralwidget, "Libro Alquilado", f"Se ha alquilado '{self.title}'.")
-
-                        # Refresh the tables to reflect the update (optional)
-                        self.refresh_table()  # Assuming you have a refresh_table function
-                        self.load_data_to_table_catalogo()  # Assuming you have a function to load catalogo table
+                        self.refresh_table()
 
                 except mysql.connector.Error as err:
                     print(f"Error updating 'Copias': {err}")
@@ -96,40 +81,33 @@ class FunctionsUser:
         else:
             QMessageBox.warning(self.ui, "Advertencia", "Por favor, seleccione una fila antes de hacer clic en el botón 'Alquilar'")
 
-
-    
-
     def buscar_libro(self):
         titulo = self.ui.Buscar_Libro.text()
 
-        select_query = "SELECT titulo, autor, resumen, Ano_de_publicacion, genero FROM Libros WHERE titulo LIKE %s"
+        select_query = "SELECT titulo, autor, resumen, Ano_de_publicacion, genero, Copias FROM Libros WHERE titulo LIKE %s"
         try:
             with self.connection.cursor() as cursor:
                 cursor.execute(select_query, ('%' + titulo + '%',))
                 data = cursor.fetchall()
 
-                #se borran TODOS datos
                 self.ui.HomeTable.clearContents()
                 self.ui.HomeTable.setRowCount(0)
                 for row in data:
-                    # Añadre solo los que encontro
-                    self.add_row_to_home_table(row)
+                    if row[5] > 0:  # Check if 'Copias' > 0
+                        self.add_row_to_home_table(row)
 
-                    
         except mysql.connector.Error as err:
             print(f"Error executing search query: {err}")
 
-
-
-#FUNCIONES DE PRUEBA
     def load_data_to_home_table(self):
-        select_query = "SELECT titulo, autor, resumen, Ano_de_publicacion, genero  FROM Libros"
+        select_query = "SELECT titulo, autor, resumen, Ano_de_publicacion, genero, Copias FROM Libros"
         try:
             with self.connection.cursor() as cursor:
                 cursor.execute(select_query)
                 data = cursor.fetchall()
                 for row in data:
-                    self.add_row_to_home_table(row)
+                    if row[5] > 0:  # Check if 'Copias' > 0
+                        self.add_row_to_home_table(row)
         except mysql.connector.Error as err:
             print(f"Error loading data to HomeTable: {err}")
 
@@ -140,21 +118,43 @@ class FunctionsUser:
             self.ui.HomeTable.setItem(row_position, column, QTableWidgetItem(str(value)))    
 
     def refresh_table(self):
-        # Borra los datos actuales en HomeTable
         self.ui.HomeTable.clearContents()
         self.ui.HomeTable.setRowCount(0)
 
-        # Carga los datos actualizados de la tabla 'Libro'
-        select_query = "SELECT titulo, autor, resumen, Ano_de_publicacion, genero FROM Libros"
+        select_query = "SELECT titulo, autor, resumen, Ano_de_publicacion, genero, Copias FROM Libros WHERE Copias > 0"
         try:
             with self.connection.cursor() as cursor:
                 cursor.execute(select_query)
                 data = cursor.fetchall()
                 for row in data:
-                    # Añade los datos a HomeTable
                     self.add_row_to_home_table(row)
         except mysql.connector.Error as err:
             print(f"Error loading data to HomeTable: {err}")
+
+    def add_data_to_table(self):
+        if not self.connection:  # Check if connection is established
+            return
+
+        fecha_actual = QDate.currentDate()
+        codigo = random.randint(1000, 9999)
+        fechaprestamo = fecha_actual.toString("yyyy-MM-dd")
+        fechadevolucion = self.ui.fecha_devolucion.date().toString("yyyy-MM-dd")
+        libro = self.title 
+        usuario = "hola"
+
+        insert_query = """
+            INSERT INTO presto (id_prestamo, fecha_prestamo, fecha_devolucion, Libro, usuario)
+            VALUES (%s, %s, %s, %s, %s)
+        """
+        try:
+            with self.connection.cursor() as cursor:
+                cursor.execute(insert_query, (codigo, fechaprestamo, fechadevolucion, libro, usuario))
+                self.connection.commit() 
+
+                print("Data inserted successfully into presto table")
+
+        except mysql.connector.Error as err:
+            print(f"Error inserting data: {err}")
 
     def close_connection(self):
         if self.connection:

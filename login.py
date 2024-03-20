@@ -89,7 +89,6 @@ class login(QWidget):
                 if username == data[2] and password == self.decrypt_password(data[5]):
                     self.user_role = data[3]  
                     rol = self.obtener_rol()
-                    print(self.logged_in_user)
 
                     if self.user_role == "ADMIN":
                         print("ES ADMIN") #borrable

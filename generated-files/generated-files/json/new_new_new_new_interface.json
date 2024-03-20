@@ -1,0 +1,130 @@
+{
+  "buttons": [
+    {
+      "name": "menubtn",
+      "icon": "C:\\Users\\aleja\\OneDrive\\Documents\\Universidad\\Teoria1\\Qss\\icons\\Icons\\feather\\align-justify.png"
+    },
+    {
+      "name": "Settings",
+      "icon": "C:\\Users\\aleja\\OneDrive\\Documents\\Universidad\\Teoria1\\Qss\\icons\\Icons\\feather\\settings.png"
+    },
+    {
+      "name": "User",
+      "icon": "C:\\Users\\aleja\\OneDrive\\Documents\\Universidad\\Teoria1\\Qss\\icons\\Icons\\feather\\user.png"
+    },
+    {
+      "name": "pushButton_2",
+      "icon": "C:\\Users\\aleja\\OneDrive\\Documents\\Universidad\\Teoria1\\PROYECTO-BUENO\\Qss\\icons\\Icons\\feather\\home.png"
+    },
+    {
+      "name": "Prestamos",
+      "icon": "C:\\Users\\aleja\\OneDrive\\Documents\\Universidad\\Teoria1\\Qss\\icons\\Icons\\font_awesome\\solid\\cart-flatbed.png"
+    },
+    {
+      "name": "Catalogo",
+      "icon": "C:\\Users\\aleja\\OneDrive\\Documents\\Universidad\\Teoria1\\Qss\\icons\\Icons\\font_awesome\\solid\\book.png"
+    },
+    {
+      "name": "Reportes",
+      "icon": "C:\\Users\\aleja\\OneDrive\\Documents\\Universidad\\Teoria1\\Qss\\icons\\Icons\\font_awesome\\solid\\file-signature.png"
+    },
+    {
+      "name": "Ayuda",
+      "icon": "C:\\Users\\aleja\\OneDrive\\Documents\\Universidad\\Teoria1\\Qss\\icons\\Icons\\material_design\\help.png"
+    },
+    {
+      "name": "Informacion",
+      "icon": "C:\\Users\\aleja\\OneDrive\\Documents\\Universidad\\Teoria1\\Qss\\icons\\Icons\\material_design\\info.png"
+    },
+    {
+      "name": "buscar_libro",
+      "icon": "C:\\Users\\aleja\\OneDrive\\Documents\\Universidad\\Teoria1\\PROYECTO-BUENO\\Qss\\icons\\Icons\\feather\\search.png"
+    },
+    {
+      "name": "refresh",
+      "icon": "default_icon_url"
+    },
+    {
+      "name": "alquilar_btn",
+      "icon": "C:\\Users\\aleja\\OneDrive\\Documents\\Universidad\\Teoria1\\PROYECTO-BUENO\\Qss\\icons\\Icons\\feather\\shopping-cart.png"
+    },
+    {
+      "name": "showForm",
+      "icon": "C:\\Users\\aleja\\OneDrive\\Documents\\Qss\\icons\\Icons\\feather\\log-in.png"
+    },
+    {
+      "name": "refresh_prestamos",
+      "icon": "default_icon_url"
+    },
+    {
+      "name": "modificar_libro",
+      "icon": "default_icon_url"
+    },
+    {
+      "name": "eliminar_libro",
+      "icon": "default_icon_url"
+    },
+    {
+      "name": "showFormC",
+      "icon": "default_icon_url"
+    },
+    {
+      "name": "refresh_catalogo",
+      "icon": "default_icon_url"
+    },
+    {
+      "name": "Add",
+      "icon": "C:\\Users\\aleja\\OneDrive\\Documents\\Qss\\icons\\Icons\\feather\\check-square.png"
+    },
+    {
+      "name": "pushButton",
+      "icon": "default_icon_url"
+    },
+    {
+      "name": "modifiok",
+      "icon": "default_icon_url"
+    }
+  ],
+  "labels": [
+    {
+      "name": "label",
+      "pixmap": "default_pixmap_url"
+    },
+    {
+      "name": "logged",
+      "pixmap": "default_pixmap_url"
+    },
+    {
+      "name": "label_8",
+      "pixmap": "default_pixmap_url"
+    },
+    {
+      "name": "label_3",
+      "pixmap": "default_pixmap_url"
+    },
+    {
+      "name": "label_5",
+      "pixmap": "default_pixmap_url"
+    },
+    {
+      "name": "label_2",
+      "pixmap": "default_pixmap_url"
+    },
+    {
+      "name": "label_6",
+      "pixmap": "default_pixmap_url"
+    },
+    {
+      "name": "label_4",
+      "pixmap": "default_pixmap_url"
+    },
+    {
+      "name": "title",
+      "pixmap": "C:\\Users\\aleja\\OneDrive\\Documents\\Qss\\icons\\Icons\\feather\\file-plus.png"
+    },
+    {
+      "name": "label_7",
+      "pixmap": "default_pixmap_url"
+    }
+  ]
+}

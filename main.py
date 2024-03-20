@@ -53,17 +53,11 @@ class MainWindow(QMainWindow):
             self.ui_admin.setupUi(self)
             loadJsonStyle(self, self.ui_admin, jsonFiles={"json-styles/style.json"}) 
             self.functions_admin = Functions(self.ui_admin)
-
-
-
             self.show()
         else:
             self.ui_user.setupUi(self)
             loadJsonStyle(self, self.ui_user, jsonFiles={"json-styles/style_user.json"}) 
             self.functions_user = FunctionsUser(self.ui_user)   
-
-
-
             self.show()
         
 

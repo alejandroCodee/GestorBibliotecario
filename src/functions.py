@@ -45,7 +45,10 @@ class Functions:
 
         self.ui.alquilar_btn.clicked.connect(self.handle_rent_button_click)
         self.ui.refresh.clicked.connect(self.refresh_table)
-        self.ui.refresh_catalogo.clicked.connect(self.refresh_catalogo_table)  
+        self.ui.refresh_catalogo.clicked.connect(self.refresh_catalogo_table)
+        self.ui.modifiok.clicked.connect(self.modify_book_details)
+        self.ui.eliminar_libro.clicked.connect(self.delete_selected_row)
+
 
        
 
@@ -55,6 +58,78 @@ class Functions:
             self.load_data_to_home_table()
             self.load_data_to_table_catalogo()
             self.load_data_to_table()
+
+
+    def delete_selected_row(self):
+        selected_row = self.ui.tableWidget_2.currentRow()
+
+        if selected_row >= 0:
+            # Obtener el ISBN del libro seleccionado en la fila
+            isbn_item = self.ui.tableWidget_2.item(selected_row, 0)
+            if isbn_item:
+                isbn = isbn_item.text()
+
+                # Eliminar la fila de la base de datos
+                delete_query = """
+                    DELETE FROM Libros
+                    WHERE ISBN = %s
+                """
+
+                try:
+                    with self.connection.cursor() as cursor:
+                        cursor.execute(delete_query, (isbn,))
+                        self.connection.commit()
+
+                        # Eliminar la fila de la tabla
+                        self.ui.tableWidget_2.removeRow(selected_row)
+
+                        QMessageBox.information(self.ui.centralwidget, "Eliminación Exitosa", "La fila seleccionada ha sido eliminada correctamente.")
+
+                except mysql.connector.Error as err:
+                    print(f"Error deleting row: {err}")
+                    QMessageBox.critical(self.ui.centralwidget, "Error", f"Error al eliminar la fila: {err}")
+
+            else:
+                QMessageBox.warning(self.ui.centralwidget, "Advertencia", "No se pudo obtener el ISBN del libro seleccionado.")
+        else:
+            QMessageBox.warning(self.ui.centralwidget, "Advertencia", "Por favor, seleccione una fila antes de hacer clic en el botón 'Eliminar'.")
+
+    def modify_book_details(self):
+        selected_row = self.ui.tableWidget_2.currentRow()
+
+        if selected_row >= 0:
+            pasillo = self.ui.Mpasillo.text()
+            estado = self.ui.Mestado.currentText()
+            copias = self.ui.Mcopias.text()
+
+            # Obtener el ISBN del libro seleccionado en la fila
+            isbn_item = self.ui.tableWidget_2.item(selected_row, 0)
+            if isbn_item:
+                isbn = isbn_item.text()
+
+                # Actualizar los datos en la base de datos
+                update_query = """
+                    UPDATE Libros
+                    SET Pasillo = %s, Estado = %s, Copias = %s
+                    WHERE ISBN = %s
+                """
+
+                try:
+                    with self.connection.cursor() as cursor:
+                        cursor.execute(update_query, (pasillo, estado, copias, isbn))
+                        self.connection.commit()
+
+                        # Informar al usuario sobre la actualización exitosa
+                        QMessageBox.information(self.ui.centralwidget, "Actualización Exitosa", "Los detalles del libro se han actualizado correctamente.")
+
+                except mysql.connector.Error as err:
+                    print(f"Error updating book details: {err}")
+                    QMessageBox.critical(self.ui.centralwidget, "Error", f"Error al actualizar los detalles del libro: {err}")
+
+            else:
+                QMessageBox.warning(self.ui.centralwidget, "Advertencia", "No se pudo obtener el ISBN del libro seleccionado.")
+        else:
+            QMessageBox.warning(self.ui.centralwidget, "Advertencia", "Por favor, seleccione una fila antes de hacer clic en el botón 'Modifiok'.")
 
     def handle_rent_button_click(self):
         # Get the selected row
@@ -272,11 +347,7 @@ class Functions:
                     self.add_row_to_catalogo_table(row)
         except mysql.connector.Error as err:
             print(f"Error loading data to catalogo table: {err}")
-
-
   
-
-
     def add_data_to_table(self):
         if not self.connection:  # Check if connection is established
             return
@@ -296,7 +367,7 @@ class Functions:
         login_i = login()
 
         usuario = self.ui.usuario_LE.text()
-        
+
         print("hola" + usuario)
         # Prepare SQL query to insert data
         insert_query = """

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'new_new_new_new_new_interface.ui'
+## Form generated from reading UI file 'new_user.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.1
 ##
@@ -15,10 +15,10 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QComboBox, QDateEdit, QFrame,
-    QGridLayout, QHBoxLayout, QHeaderView, QLineEdit,
-    QMainWindow, QSizePolicy, QSpacerItem, QTabWidget,
-    QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QDateEdit, QFrame, QGridLayout,
+    QHBoxLayout, QHeaderView, QLineEdit, QMainWindow,
+    QSizePolicy, QTabWidget, QTableWidget, QTableWidgetItem,
+    QVBoxLayout, QWidget)
 
 from Custom_Widgets.Theme import (QLabelThemed, QPushButtonThemed)
 from Custom_Widgets.Widgets import (QCustomSlideMenu, QCustomStackedWidget)
@@ -72,13 +72,6 @@ class Ui_MainWindow(object):
 
 
         self.horizontalLayout.addWidget(self.frameIzq, 0, Qt.AlignLeft)
-
-        self.logged = QLabelThemed(self.header)
-        self.logged.setObjectName(u"logged")
-        self.logged.setStyleSheet(u"font: 700 12pt \"Century Gothic\";\n"
-"color: rgb(255, 255, 255);")
-
-        self.horizontalLayout.addWidget(self.logged)
 
         self.frameDer = QFrame(self.header)
         self.frameDer.setObjectName(u"frameDer")
@@ -165,54 +158,6 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_5.addWidget(self.pushButton_2)
 
-        self.Prestamos = QPushButtonThemed(self.frame)
-        self.Prestamos.setObjectName(u"Prestamos")
-        self.Prestamos.setFont(font1)
-        self.Prestamos.setCursor(QCursor(Qt.PointingHandCursor))
-        self.Prestamos.setStyleSheet(u"text-align: left;\n"
-"background-color: rgb(2, 63, 82);\n"
-"color: rgb(255, 255, 255);\n"
-"border-left-color: rgb(255, 255, 255);")
-        icon4 = QIcon()
-        icon4.addFile(u"../../Qss/icons/Icons/font_awesome/solid/cart-flatbed.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.Prestamos.setIcon(icon4)
-        self.Prestamos.setIconSize(QSize(40, 40))
-
-        self.verticalLayout_5.addWidget(self.Prestamos)
-
-        self.Catalogo = QPushButtonThemed(self.frame)
-        self.Catalogo.setObjectName(u"Catalogo")
-        font2 = QFont()
-        font2.setFamilies([u"Century Gothic"])
-        font2.setPointSize(12)
-        self.Catalogo.setFont(font2)
-        self.Catalogo.setCursor(QCursor(Qt.PointingHandCursor))
-        self.Catalogo.setStyleSheet(u"text-align: left;\n"
-"color: rgb(255, 255, 255);")
-        icon5 = QIcon()
-        icon5.addFile(u"../../Qss/icons/Icons/font_awesome/solid/book.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.Catalogo.setIcon(icon5)
-        self.Catalogo.setIconSize(QSize(40, 40))
-
-        self.verticalLayout_5.addWidget(self.Catalogo)
-
-        self.Reportes = QPushButtonThemed(self.frame)
-        self.Reportes.setObjectName(u"Reportes")
-        self.Reportes.setFont(font2)
-        self.Reportes.setCursor(QCursor(Qt.PointingHandCursor))
-        self.Reportes.setStyleSheet(u"text-align: left;\n"
-"color: rgb(255, 255, 255);")
-        icon6 = QIcon()
-        icon6.addFile(u"../../Qss/icons/Icons/font_awesome/solid/file-signature.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.Reportes.setIcon(icon6)
-        self.Reportes.setIconSize(QSize(40, 40))
-
-        self.verticalLayout_5.addWidget(self.Reportes)
-
-        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.verticalLayout_5.addItem(self.verticalSpacer)
-
 
         self.verticalLayout_4.addWidget(self.frame)
 
@@ -226,29 +171,29 @@ class Ui_MainWindow(object):
         self.verticalLayout_6.setContentsMargins(0, 0, 0, 0)
         self.Ayuda = QPushButtonThemed(self.frame_2)
         self.Ayuda.setObjectName(u"Ayuda")
-        font3 = QFont()
-        font3.setFamilies([u"Century Gothic"])
-        font3.setPointSize(10)
-        self.Ayuda.setFont(font3)
+        font2 = QFont()
+        font2.setFamilies([u"Century Gothic"])
+        font2.setPointSize(10)
+        self.Ayuda.setFont(font2)
         self.Ayuda.setCursor(QCursor(Qt.PointingHandCursor))
         self.Ayuda.setStyleSheet(u"text-align: left;\n"
 "color: rgb(255, 255, 255);")
-        icon7 = QIcon()
-        icon7.addFile(u"../../Qss/icons/Icons/material_design/help.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.Ayuda.setIcon(icon7)
+        icon4 = QIcon()
+        icon4.addFile(u"../../Qss/icons/Icons/material_design/help.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.Ayuda.setIcon(icon4)
         self.Ayuda.setIconSize(QSize(30, 30))
 
         self.verticalLayout_6.addWidget(self.Ayuda)
 
         self.Informacion = QPushButtonThemed(self.frame_2)
         self.Informacion.setObjectName(u"Informacion")
-        self.Informacion.setFont(font3)
+        self.Informacion.setFont(font2)
         self.Informacion.setCursor(QCursor(Qt.PointingHandCursor))
         self.Informacion.setStyleSheet(u"text-align: left;\n"
 "color: rgb(255, 255, 255);")
-        icon8 = QIcon()
-        icon8.addFile(u"../../Qss/icons/Icons/material_design/info.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.Informacion.setIcon(icon8)
+        icon5 = QIcon()
+        icon5.addFile(u"../../Qss/icons/Icons/material_design/info.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.Informacion.setIcon(icon5)
         self.Informacion.setIconSize(QSize(30, 30))
 
         self.verticalLayout_6.addWidget(self.Informacion)
@@ -286,11 +231,11 @@ class Ui_MainWindow(object):
         self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
         self.label_8 = QLabelThemed(self.frame_7)
         self.label_8.setObjectName(u"label_8")
-        font4 = QFont()
-        font4.setFamilies([u"Century Gothic"])
-        font4.setPointSize(26)
-        font4.setBold(True)
-        self.label_8.setFont(font4)
+        font3 = QFont()
+        font3.setFamilies([u"Century Gothic"])
+        font3.setPointSize(26)
+        font3.setBold(True)
+        self.label_8.setFont(font3)
         self.label_8.setStyleSheet(u"color: rgb(255, 255, 255);")
 
         self.horizontalLayout_7.addWidget(self.label_8)
@@ -306,14 +251,14 @@ class Ui_MainWindow(object):
 
         self.buscar_libro = QPushButtonThemed(self.frame_7)
         self.buscar_libro.setObjectName(u"buscar_libro")
-        font5 = QFont()
-        font5.setFamilies([u"Century Gothic"])
-        self.buscar_libro.setFont(font5)
+        font4 = QFont()
+        font4.setFamilies([u"Century Gothic"])
+        self.buscar_libro.setFont(font4)
         self.buscar_libro.setStyleSheet(u"background-color: rgb(0, 133, 175);\n"
 "color: rgb(255, 255, 255);")
-        icon9 = QIcon()
-        icon9.addFile(u"../Qss/icons/Icons/feather/search.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.buscar_libro.setIcon(icon9)
+        icon6 = QIcon()
+        icon6.addFile(u"../Qss/icons/Icons/feather/search.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.buscar_libro.setIcon(icon6)
         self.buscar_libro.setIconSize(QSize(20, 20))
 
         self.horizontalLayout_7.addWidget(self.buscar_libro)
@@ -345,11 +290,11 @@ class Ui_MainWindow(object):
 
         self.alquilar_btn = QPushButtonThemed(self.widget_6)
         self.alquilar_btn.setObjectName(u"alquilar_btn")
-        font6 = QFont()
-        font6.setFamilies([u"Century Gothic"])
-        font6.setPointSize(10)
-        font6.setBold(True)
-        self.alquilar_btn.setFont(font6)
+        font5 = QFont()
+        font5.setFamilies([u"Century Gothic"])
+        font5.setPointSize(10)
+        font5.setBold(True)
+        self.alquilar_btn.setFont(font5)
         self.alquilar_btn.setCursor(QCursor(Qt.OpenHandCursor))
         self.alquilar_btn.setStyleSheet(u"\n"
 "background-color: rgb(0, 133, 175);\n"
@@ -357,9 +302,9 @@ class Ui_MainWindow(object):
 "border-radius: 5px;\n"
 "\n"
 "color: rgb(255, 255, 255);")
-        icon10 = QIcon()
-        icon10.addFile(u"../Qss/icons/Icons/feather/shopping-cart.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.alquilar_btn.setIcon(icon10)
+        icon7 = QIcon()
+        icon7.addFile(u"../Qss/icons/Icons/feather/shopping-cart.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.alquilar_btn.setIcon(icon7)
         self.alquilar_btn.setIconSize(QSize(20, 20))
 
         self.verticalLayout_19.addWidget(self.alquilar_btn, 0, Qt.AlignRight)
@@ -384,11 +329,11 @@ class Ui_MainWindow(object):
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
         self.label_3 = QLabelThemed(self.frame_4)
         self.label_3.setObjectName(u"label_3")
-        font7 = QFont()
-        font7.setFamilies([u"Century Gothic"])
-        font7.setPointSize(28)
-        font7.setBold(True)
-        self.label_3.setFont(font7)
+        font6 = QFont()
+        font6.setFamilies([u"Century Gothic"])
+        font6.setPointSize(28)
+        font6.setBold(True)
+        self.label_3.setFont(font6)
         self.label_3.setStyleSheet(u"color: rgb(255, 255, 255);")
         self.label_3.setAlignment(Qt.AlignCenter)
 
@@ -396,17 +341,17 @@ class Ui_MainWindow(object):
 
         self.showForm = QPushButtonThemed(self.frame_4)
         self.showForm.setObjectName(u"showForm")
-        font8 = QFont()
-        font8.setFamilies([u"Century Gothic"])
-        font8.setPointSize(11)
-        font8.setBold(True)
-        self.showForm.setFont(font8)
+        font7 = QFont()
+        font7.setFamilies([u"Century Gothic"])
+        font7.setPointSize(11)
+        font7.setBold(True)
+        self.showForm.setFont(font7)
         self.showForm.setCursor(QCursor(Qt.PointingHandCursor))
         self.showForm.setStyleSheet(u"color: rgb(255, 255, 255);\n"
 "background-color: rgb(2, 63, 82);")
-        icon11 = QIcon()
-        icon11.addFile(u"../../../../Qss/icons/Icons/feather/log-in.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.showForm.setIcon(icon11)
+        icon8 = QIcon()
+        icon8.addFile(u"../../../../Qss/icons/Icons/feather/log-in.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.showForm.setIcon(icon8)
         self.showForm.setIconSize(QSize(24, 24))
 
         self.horizontalLayout_5.addWidget(self.showForm, 0, Qt.AlignRight)
@@ -456,21 +401,11 @@ class Ui_MainWindow(object):
         self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
         self.label_5 = QLabelThemed(self.frame_5)
         self.label_5.setObjectName(u"label_5")
-        self.label_5.setFont(font7)
+        self.label_5.setFont(font6)
         self.label_5.setStyleSheet(u"color: rgb(255, 255, 255);")
         self.label_5.setAlignment(Qt.AlignCenter)
 
         self.horizontalLayout_6.addWidget(self.label_5)
-
-        self.modificar_libro = QPushButtonThemed(self.frame_5)
-        self.modificar_libro.setObjectName(u"modificar_libro")
-
-        self.horizontalLayout_6.addWidget(self.modificar_libro)
-
-        self.eliminar_libro = QPushButtonThemed(self.frame_5)
-        self.eliminar_libro.setObjectName(u"eliminar_libro")
-
-        self.horizontalLayout_6.addWidget(self.eliminar_libro)
 
         self.showFormC = QPushButtonThemed(self.frame_5)
         self.showFormC.setObjectName(u"showFormC")
@@ -479,6 +414,11 @@ class Ui_MainWindow(object):
 
 
         self.verticalLayout_14.addWidget(self.frame_5)
+
+        self.Buscar_Catalogo = QLineEdit(self.widget_4)
+        self.Buscar_Catalogo.setObjectName(u"Buscar_Catalogo")
+
+        self.verticalLayout_14.addWidget(self.Buscar_Catalogo)
 
         self.refresh_catalogo = QPushButtonThemed(self.widget_4)
         self.refresh_catalogo.setObjectName(u"refresh_catalogo")
@@ -525,7 +465,7 @@ class Ui_MainWindow(object):
         self.label_2 = QLabelThemed(self.reportesP)
         self.label_2.setObjectName(u"label_2")
         self.label_2.setGeometry(QRect(50, 30, 231, 71))
-        self.label_2.setFont(font7)
+        self.label_2.setFont(font6)
         self.label_2.setStyleSheet(u"color: rgb(255, 255, 255);")
         self.label_2.setAlignment(Qt.AlignCenter)
         self.mainPages.addWidget(self.reportesP)
@@ -535,7 +475,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_12.setObjectName(u"verticalLayout_12")
         self.label_6 = QLabelThemed(self.ayudaP)
         self.label_6.setObjectName(u"label_6")
-        self.label_6.setFont(font7)
+        self.label_6.setFont(font6)
         self.label_6.setStyleSheet(u"color: rgb(255, 255, 255);")
         self.label_6.setAlignment(Qt.AlignCenter)
 
@@ -551,7 +491,7 @@ class Ui_MainWindow(object):
         self.label_4 = QLabelThemed(self.widget_7)
         self.label_4.setObjectName(u"label_4")
         self.label_4.setGeometry(QRect(70, 30, 264, 45))
-        self.label_4.setFont(font7)
+        self.label_4.setFont(font6)
         self.label_4.setStyleSheet(u"color: rgb(255, 255, 255);")
         self.label_4.setAlignment(Qt.AlignCenter)
 
@@ -620,14 +560,14 @@ class Ui_MainWindow(object):
 
         self.Add = QPushButtonThemed(self.widget_2)
         self.Add.setObjectName(u"Add")
-        self.Add.setFont(font8)
+        self.Add.setFont(font7)
         self.Add.setCursor(QCursor(Qt.PointingHandCursor))
         self.Add.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
 "color: rgb(2, 63, 82);\n"
 "")
-        icon12 = QIcon()
-        icon12.addFile(u"../../../../Qss/icons/Icons/feather/check-square.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.Add.setIcon(icon12)
+        icon9 = QIcon()
+        icon9.addFile(u"../../../../Qss/icons/Icons/feather/check-square.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.Add.setIcon(icon9)
         self.Add.setIconSize(QSize(25, 25))
 
         self.verticalLayout_8.addWidget(self.Add, 0, Qt.AlignHCenter)
@@ -636,177 +576,6 @@ class Ui_MainWindow(object):
         self.verticalLayout_15.addWidget(self.widget_2)
 
         self.Menu_Der.addTab(self.tab, "")
-        self.tab_2 = QWidget()
-        self.tab_2.setObjectName(u"tab_2")
-        self.verticalLayout_18 = QVBoxLayout(self.tab_2)
-        self.verticalLayout_18.setObjectName(u"verticalLayout_18")
-        self.widget_5 = QWidget(self.tab_2)
-        self.widget_5.setObjectName(u"widget_5")
-        self.verticalLayout_17 = QVBoxLayout(self.widget_5)
-        self.verticalLayout_17.setObjectName(u"verticalLayout_17")
-        self.label_7 = QLabelThemed(self.widget_5)
-        self.label_7.setObjectName(u"label_7")
-        self.label_7.setMaximumSize(QSize(70, 70))
-
-        self.verticalLayout_17.addWidget(self.label_7, 0, Qt.AlignHCenter)
-
-        self.frame_6 = QFrame(self.widget_5)
-        self.frame_6.setObjectName(u"frame_6")
-        self.frame_6.setFrameShape(QFrame.StyledPanel)
-        self.frame_6.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_16 = QVBoxLayout(self.frame_6)
-        self.verticalLayout_16.setObjectName(u"verticalLayout_16")
-        self.ISBN_LE = QLineEdit(self.frame_6)
-        self.ISBN_LE.setObjectName(u"ISBN_LE")
-        self.ISBN_LE.setStyleSheet(u"background-color: rgb(2, 63, 82);\n"
-"padding: 5px 10px;\n"
-"border-radius: 5px;\n"
-"\n"
-"color: rgb(255, 255, 255);")
-
-        self.verticalLayout_16.addWidget(self.ISBN_LE)
-
-        self.TITULO_LE = QLineEdit(self.frame_6)
-        self.TITULO_LE.setObjectName(u"TITULO_LE")
-        self.TITULO_LE.setStyleSheet(u"background-color: rgb(2, 63, 82);\n"
-"padding: 5px 10px;\n"
-"border-radius: 5px;\n"
-"\n"
-"color: rgb(255, 255, 255);")
-
-        self.verticalLayout_16.addWidget(self.TITULO_LE)
-
-        self.GENERO_LE = QLineEdit(self.frame_6)
-        self.GENERO_LE.setObjectName(u"GENERO_LE")
-        self.GENERO_LE.setStyleSheet(u"background-color: rgb(2, 63, 82);\n"
-"padding: 5px 10px;\n"
-"border-radius: 5px;\n"
-"\n"
-"color: rgb(255, 255, 255);")
-
-        self.verticalLayout_16.addWidget(self.GENERO_LE)
-
-        self.AUTOR_LE = QLineEdit(self.frame_6)
-        self.AUTOR_LE.setObjectName(u"AUTOR_LE")
-        self.AUTOR_LE.setStyleSheet(u"background-color: rgb(2, 63, 82);\n"
-"padding: 5px 10px;\n"
-"border-radius: 5px;\n"
-"\n"
-"color: rgb(255, 255, 255);")
-
-        self.verticalLayout_16.addWidget(self.AUTOR_LE)
-
-        self.ANOP_LE = QLineEdit(self.frame_6)
-        self.ANOP_LE.setObjectName(u"ANOP_LE")
-        self.ANOP_LE.setStyleSheet(u"background-color: rgb(2, 63, 82);\n"
-"padding: 5px 10px;\n"
-"border-radius: 5px;\n"
-"\n"
-"color: rgb(255, 255, 255);")
-
-        self.verticalLayout_16.addWidget(self.ANOP_LE)
-
-        self.DISPONIBLE_LE = QLineEdit(self.frame_6)
-        self.DISPONIBLE_LE.setObjectName(u"DISPONIBLE_LE")
-        self.DISPONIBLE_LE.setStyleSheet(u"background-color: rgb(2, 63, 82);\n"
-"padding: 5px 10px;\n"
-"border-radius: 5px;\n"
-"\n"
-"color: rgb(255, 255, 255);")
-
-        self.verticalLayout_16.addWidget(self.DISPONIBLE_LE)
-
-        self.FORMATO_LE = QLineEdit(self.frame_6)
-        self.FORMATO_LE.setObjectName(u"FORMATO_LE")
-        self.FORMATO_LE.setStyleSheet(u"background-color: rgb(2, 63, 82);\n"
-"padding: 5px 10px;\n"
-"border-radius: 5px;\n"
-"\n"
-"color: rgb(255, 255, 255);")
-
-        self.verticalLayout_16.addWidget(self.FORMATO_LE)
-
-        self.CANTIDAD_LE = QLineEdit(self.frame_6)
-        self.CANTIDAD_LE.setObjectName(u"CANTIDAD_LE")
-        self.CANTIDAD_LE.setStyleSheet(u"background-color: rgb(2, 63, 82);\n"
-"padding: 5px 10px;\n"
-"border-radius: 5px;\n"
-"\n"
-"color: rgb(255, 255, 255);")
-
-        self.verticalLayout_16.addWidget(self.CANTIDAD_LE)
-
-        self.IDIOMA_LE = QLineEdit(self.frame_6)
-        self.IDIOMA_LE.setObjectName(u"IDIOMA_LE")
-        self.IDIOMA_LE.setStyleSheet(u"background-color: rgb(2, 63, 82);\n"
-"padding: 5px 10px;\n"
-"border-radius: 5px;\n"
-"\n"
-"color: rgb(255, 255, 255);")
-
-        self.verticalLayout_16.addWidget(self.IDIOMA_LE)
-
-        self.RESUMEN_LE = QLineEdit(self.frame_6)
-        self.RESUMEN_LE.setObjectName(u"RESUMEN_LE")
-        self.RESUMEN_LE.setStyleSheet(u"background-color: rgb(2, 63, 82);\n"
-"padding: 5px 10px;\n"
-"border-radius: 5px;\n"
-"\n"
-"color: rgb(255, 255, 255);")
-
-        self.verticalLayout_16.addWidget(self.RESUMEN_LE)
-
-        self.PASILLO_LE = QLineEdit(self.frame_6)
-        self.PASILLO_LE.setObjectName(u"PASILLO_LE")
-        self.PASILLO_LE.setStyleSheet(u"background-color: rgb(2, 63, 82);\n"
-"padding: 5px 10px;\n"
-"border-radius: 5px;\n"
-"\n"
-"color: rgb(255, 255, 255);")
-
-        self.verticalLayout_16.addWidget(self.PASILLO_LE)
-
-        self.ESTADO_LE = QLineEdit(self.frame_6)
-        self.ESTADO_LE.setObjectName(u"ESTADO_LE")
-        self.ESTADO_LE.setStyleSheet(u"background-color: rgb(2, 63, 82);\n"
-"padding: 5px 10px;\n"
-"border-radius: 5px;\n"
-"\n"
-"color: rgb(255, 255, 255);")
-
-        self.verticalLayout_16.addWidget(self.ESTADO_LE)
-
-
-        self.verticalLayout_17.addWidget(self.frame_6)
-
-        self.pushButton = QPushButtonThemed(self.widget_5)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setIconSize(QSize(25, 25))
-
-        self.verticalLayout_17.addWidget(self.pushButton)
-
-
-        self.verticalLayout_18.addWidget(self.widget_5)
-
-        self.Menu_Der.addTab(self.tab_2, "")
-        self.tab_3 = QWidget()
-        self.tab_3.setObjectName(u"tab_3")
-        self.Mpasillo = QLineEdit(self.tab_3)
-        self.Mpasillo.setObjectName(u"Mpasillo")
-        self.Mpasillo.setGeometry(QRect(20, 130, 181, 21))
-        self.Mcopias = QLineEdit(self.tab_3)
-        self.Mcopias.setObjectName(u"Mcopias")
-        self.Mcopias.setGeometry(QRect(20, 190, 171, 22))
-        self.modifiok = QPushButtonThemed(self.tab_3)
-        self.modifiok.setObjectName(u"modifiok")
-        self.modifiok.setGeometry(QRect(50, 350, 91, 21))
-        self.Mestado = QComboBox(self.tab_3)
-        self.Mestado.addItem("")
-        self.Mestado.addItem("")
-        self.Mestado.addItem("")
-        self.Mestado.setObjectName(u"Mestado")
-        self.Mestado.setGeometry(QRect(20, 250, 171, 22))
-        self.Menu_Der.addTab(self.tab_3, "")
 
         self.verticalLayout_7.addWidget(self.Menu_Der)
 
@@ -820,8 +589,8 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.mainPages.setCurrentIndex(2)
-        self.Menu_Der.setCurrentIndex(2)
+        self.mainPages.setCurrentIndex(0)
+        self.Menu_Der.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -831,13 +600,9 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.menubtn.setText("")
         self.label.setText(QCoreApplication.translate("MainWindow", u"SISTEBIB", None))
-        self.logged.setText("")
         self.Settings.setText("")
         self.User.setText("")
         self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"Home", None))
-        self.Prestamos.setText(QCoreApplication.translate("MainWindow", u"Prestamos", None))
-        self.Catalogo.setText(QCoreApplication.translate("MainWindow", u"Catalogo", None))
-        self.Reportes.setText(QCoreApplication.translate("MainWindow", u"Reportes", None))
         self.Ayuda.setText(QCoreApplication.translate("MainWindow", u"Ayuda", None))
         self.Informacion.setText(QCoreApplication.translate("MainWindow", u"Informaci\u00f3n", None))
         self.label_8.setText(QCoreApplication.translate("MainWindow", u"LIBROS", None))
@@ -869,8 +634,6 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem9 = self.prestamos_tabla.horizontalHeaderItem(4)
         ___qtablewidgetitem9.setText(QCoreApplication.translate("MainWindow", u"USUARIO", None));
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"CATALOGO", None))
-        self.modificar_libro.setText(QCoreApplication.translate("MainWindow", u"Modificar Libro", None))
-        self.eliminar_libro.setText(QCoreApplication.translate("MainWindow", u"Eliminar Libro", None))
         self.showFormC.setText(QCoreApplication.translate("MainWindow", u"A\u00f1adir Libro", None))
         self.refresh_catalogo.setText(QCoreApplication.translate("MainWindow", u"R", None))
         ___qtablewidgetitem10 = self.tableWidget_2.horizontalHeaderItem(0)
@@ -904,28 +667,5 @@ class Ui_MainWindow(object):
         self.usuario_LE.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Usuario", None))
         self.Add.setText(QCoreApplication.translate("MainWindow", u"ADD", None))
         self.Menu_Der.setTabText(self.Menu_Der.indexOf(self.tab), QCoreApplication.translate("MainWindow", u"Tab 1", None))
-        self.label_7.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.ISBN_LE.setPlaceholderText(QCoreApplication.translate("MainWindow", u"ISBN", None))
-        self.TITULO_LE.setPlaceholderText(QCoreApplication.translate("MainWindow", u"TITULO", None))
-        self.GENERO_LE.setPlaceholderText(QCoreApplication.translate("MainWindow", u"GENERO", None))
-        self.AUTOR_LE.setPlaceholderText(QCoreApplication.translate("MainWindow", u"AUTOR", None))
-        self.ANOP_LE.setPlaceholderText(QCoreApplication.translate("MainWindow", u"A\u00d1O", None))
-        self.DISPONIBLE_LE.setPlaceholderText(QCoreApplication.translate("MainWindow", u"DISPONIBLE", None))
-        self.FORMATO_LE.setPlaceholderText(QCoreApplication.translate("MainWindow", u"FORMATO", None))
-        self.CANTIDAD_LE.setPlaceholderText(QCoreApplication.translate("MainWindow", u"CANTIDAD", None))
-        self.IDIOMA_LE.setPlaceholderText(QCoreApplication.translate("MainWindow", u"IDIOMA", None))
-        self.RESUMEN_LE.setPlaceholderText(QCoreApplication.translate("MainWindow", u"RESUMEN", None))
-        self.PASILLO_LE.setPlaceholderText(QCoreApplication.translate("MainWindow", u"PASILLO", None))
-        self.ESTADO_LE.setPlaceholderText(QCoreApplication.translate("MainWindow", u"ESTADO", None))
-        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"ADD", None))
-        self.Menu_Der.setTabText(self.Menu_Der.indexOf(self.tab_2), QCoreApplication.translate("MainWindow", u"Tab 2", None))
-        self.Mpasillo.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Pasillo", None))
-        self.Mcopias.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Copias", None))
-        self.modifiok.setText(QCoreApplication.translate("MainWindow", u"MODIFICAR", None))
-        self.Mestado.setItemText(0, QCoreApplication.translate("MainWindow", u"NUEVO", None))
-        self.Mestado.setItemText(1, QCoreApplication.translate("MainWindow", u"MEDIO USADO", None))
-        self.Mestado.setItemText(2, QCoreApplication.translate("MainWindow", u"VIEJO", None))
-
-        self.Menu_Der.setTabText(self.Menu_Der.indexOf(self.tab_3), QCoreApplication.translate("MainWindow", u"Page", None))
     # retranslateUi
 
