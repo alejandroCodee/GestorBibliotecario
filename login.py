@@ -12,7 +12,7 @@ cipher_suite = Fernet(key)
 
 class login(QWidget):
     # Define la señal
-    session_closed = Signal()
+    session_closed = Signal(str)
 
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -86,12 +86,14 @@ class login(QWidget):
             for data in self.usuario_data:
                 if username == data[2] and password == self.decrypt_password(data[5]):
                     self.user_role = data[3]  
+                    rol = self.obtener_rol()
+
                     if self.user_role == "ADMIN":
                         print("ES ADMIN") #borrable
                     else:
                         print("ES NORMAL") #borrable
                     # Emite la señal cuando el usuario inicia sesión exitosamente
-                    self.session_closed.emit()
+                    self.session_closed.emit(rol)
                     return  
             msg_box.setText(" Usuario o contraseña invalidos ")  
             msg_box.exec()  

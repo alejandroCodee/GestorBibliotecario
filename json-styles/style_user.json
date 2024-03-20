@@ -1,0 +1,204 @@
+{
+  "ShowLogs": true,
+  "QMainWindow": [
+    {
+      "tittle": "Proyecto_GUI"
+    }
+  ],
+  "QSettings": [
+    {
+      "ThemeSettings": [
+        {
+          "CustomTheme": [
+            {
+              "Background-color": "#000000",
+              "Text-color": "#FFFFFF",
+              "Accent-color": "#00008B",
+              "Icons-color": "#FFFFFF",
+              "Theme-name": "Default-theme",
+              "Default-Theme": true
+            }
+          ]
+        }
+      ],
+      "AppSettings": {
+        "OrginizationName": "Proyecto_GUI",
+        "ApplicationName": "Nothing",
+        "OrginizationDormain": "noting.org"
+      }
+    }
+  ],
+
+  "QPushButtonGroup": [
+    {
+      "Buttons": [
+        "Ayuda",
+        "pushButton_2",
+        "Informacion"
+      ],
+      "Style": [
+        {
+          "Active": "text-align: left; background-color: rgb(2, 63, 82); color: rgb(255, 255, 255); border-left-color: rgb(255, 255, 255);",
+          "NotActive": "background-color: transparent; text-align: left;"
+        }
+      ]
+    }
+  ],
+
+
+  "QCustomSlideMenu": [
+    {
+      "name": "MenuIzq",
+      "defaultSize": [
+        {
+          "width": 0,
+          "height": "parent"
+        }
+      ],
+      "collapsedSize": [
+        {
+          "width": 0,
+          "height": "parent"
+        }
+      ],
+      "expandedSize": [
+        {
+          "width": 200,
+          "height": "parent"
+        }
+      ],
+      "toggleButton": [
+        {
+          "buttonName": "menubtn",
+          "icons": [
+            {
+              "whenMenuIsCollapsed": "C:/Users/aleja/OneDrive/Documents/Universidad/Teoría de base de dato 1/PROYECTO-BUENO/Qss/icons/Icons/feather/align-justify.png",
+              "whenMenuIsExpanded": "C:/Users/aleja/OneDrive/Documents/Universidad/Teoría de base de dato 1/PROYECTO-BUENO/Qss/icons/Icons/feather/chevron-left.png"
+            }
+          ]
+        }
+      ],
+      "menuTransitionAnimation": [
+        {
+          "animationDuration": 500,
+          "animationEasingCurve": "Linear"
+        }
+      ]
+    },
+
+
+     {
+      "name": "MenuDer",
+      "defaultSize": [
+        {
+          "width": 0,
+          "height": "parent"
+        }
+      ],
+      "collapsedSize": [
+        {
+          "width": 0,
+          "height": "parent"
+        }
+      ],
+      "expandedSize": [
+        {
+          "width": 200,
+          "height": "parent"
+        }
+      ],
+      "toggleButton": [
+        {
+          "buttonName": "showForm",
+          "icons": [
+            {
+              "whenMenuIsCollapsed": "C:/Users/aleja/OneDrive/Documents/Universidad/Teoria1/PROYECTO-BUENO/Qss/icons/Icons/feather/log-in.png",
+              "whenMenuIsExpanded": "C:/Users/aleja/OneDrive/Documents/Universidad/Teoria1/PROYECTO-BUENO/Qss/icons/Icons/feather/window-close.png"
+            }
+          ]
+        },
+        {
+          "buttonName": "alquilar_btn",
+          "icons": [
+            {
+              "whenMenuIsCollapsed": "C:/Users/aleja/OneDrive/Documents/Universidad/Teoria1/PROYECTO-BUENO/Qss/icons/Icons/feather/log-in.png",
+              "whenMenuIsExpanded": "C:/Users/aleja/OneDrive/Documents/Universidad/Teoria1/PROYECTO-BUENO/Qss/icons/Icons/feather/window-close.png"
+            }
+          ]
+        },
+        {
+          "buttonName": "showFormC",
+          "icons": [
+            {
+              "whenMenuIsCollapsed": "C:/Users/aleja/OneDrive/Documents/Universidad/Teoria1/PROYECTO-BUENO/Qss/icons/Icons/feather/log-in.png",
+              "whenMenuIsExpanded": "C:/Users/aleja/OneDrive/Documents/Universidad/Teoria1/PROYECTO-BUENO/Qss/icons/Icons/feather/window-close.png"
+            }
+          ]
+        }
+      ],
+      "menuTransitionAnimation": [
+        {
+          "animationDuration": 500,
+          "animationEasingCurve": "Linear"
+        }
+      ]
+    }
+
+  ],
+
+  "QCustomQStackedWidget":[
+    {
+      "name":"mainPages",
+      "transitionAnimation":[
+        {
+          "fade":[
+            {
+              "active": true,
+              "duration":0,
+              "easingCurve": "Linear"
+            }
+          ],
+          "slide":[
+            {
+              "active":true,
+              "duration": 500,
+              "direction": "horizontal",
+              "easingCurve": "Linear"
+            }
+          ]
+        }
+      ],
+      "navigation":[
+        {
+          
+          "navigationButtons":[
+            {
+              "Ayuda":"ayudaP",
+              "pushButton_2":"HomeP",
+              "Informacion":"infoP"
+
+            }
+          ]
+        }
+      ]
+  
+    }
+  ],
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  "QtBinding": "PySide6"
+}

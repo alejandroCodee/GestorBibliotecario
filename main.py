@@ -6,9 +6,7 @@ import os
 import sys
 ########################################################################
 # IMPORT GUI FILE
-from src.ui_interface import *
 from src.functions import Functions
-from src.ui_interface_user import *
 
 ########################################################################
 ########################################################################
@@ -16,7 +14,11 @@ from src.ui_interface_user import *
 from Custom_Widgets import *
 from Custom_Widgets.QAppSettings import QAppSettings
 from login import login 
+
 from src.functions_user import FunctionsUser
+from src.ui_interface import Ui_MainWindow
+from src.ui_interface_user import Ui_UserMain
+
 ########################################################################
 
 ########################################################################
@@ -25,52 +27,40 @@ from src.functions_user import FunctionsUser
 class MainWindow(QMainWindow):
     def __init__(self, parent=None):
         QMainWindow.__init__(self)
+
+
         self.ui_admin = Ui_MainWindow()
         self.ui_user = Ui_UserMain()
+
         
-        self.ui_admin.setupUi(self)
         self.ui_user.setupUi(self)
-        
+        self.ui_admin.setupUi(self)
+
         ########################################################################
         # APPLY JSON STYLESHEET
         ########################################################################
         loadJsonStyle(self, self.ui_admin, jsonFiles={"json-styles/style.json"}) 
-        loadJsonStyle(self, self.ui_user, jsonFiles={"json-styles/style.json"}) 
-        
-        self.functions = Functions(self.ui)
-        
+        loadJsonStyle(self, self.ui_user, jsonFiles={"json-styles/style_user.json"}) 
 
+        # Para trabajar con la interfaz de administrador
+        self.functions_admin = Functions(self.ui_admin)
+        # Para trabajar con la interfaz de usuario
+        self.functions_user = FunctionsUser(self.ui_user)   
         self.login_window = login()
         self.login_window.show()
-
-        
         self.login_window.session_closed.connect(self.show_main_window)
 
-        #######################################################################
-
-    #######################################################################
-    # SHOW WINDOW
-    #######################################################################
     def show_main_window(self):
         # Cierra la ventana de login y muestra la ventana principal
         self.login_window.close()
-        
-        user = FunctionsUser(self.ui)
-        rol = user.obtener_rol()
-        if (rol == "ADMIN"):
-            self.ui_admin.show()
+        rol = self.login_window.obtener_rol()
+        if rol == "ADMIN":
+            self.show()
         else:
-            self.ui_user.show()
-            
-        
+            self.show()
         
 
-    ########################################################################
-    # UPDATE APP SETTINGS LOADED FROM JSON STYLESHEET 
-    # IT'S IMPORTANT TO RUN THIS AFTER SHOWING THE WINDOW
-    # THIS PROCESS WILL RUN ON A SEPARATE THREAD WHEN GENERATING NEW ICONS
-    # TO PREVENT THE WINDOW FROM BEING UNRESPONSIVE
-    ########################################################################
+    
     def update_app_settings(self):
         QAppSettings.updateAppSettings(self)
 

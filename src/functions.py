@@ -12,7 +12,10 @@ from PySide6 import QtCore
 from PySide6.QtGui import QIcon
 from PySide6 import QtWidgets  
 import random
+from src.ui_interface import Ui_MainWindow
+
 import mysql.connector
+
 
 def connect_to_database():
     """Connects to the MySQL database using the provided configuration."""

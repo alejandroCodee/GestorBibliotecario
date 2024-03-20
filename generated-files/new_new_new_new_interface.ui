@@ -1009,7 +1009,7 @@ background-color: rgb(2, 63, 82);</string>
           <item>
            <widget class="QTabWidget" name="Menu_Der">
             <property name="currentIndex">
-             <number>0</number>
+             <number>1</number>
             </property>
             <widget class="QWidget" name="tab">
              <attribute name="title">
